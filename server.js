@@ -39,7 +39,7 @@ const quizzesApiRoutes = require('./routes/quizzes-api');
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
 app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
-app.use('/api/quizzes', quizzesApiRoutes);
+app.use('/quizzes', quizzesApiRoutes);
 app.use('/users', usersRoutes);
 // app.use('/quizzes', quizzesRoutes);
 // Note: mount other resources here, using the same pattern above
@@ -52,10 +52,10 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
-app.get('/quizzes', (req, res) => {
-  // console.log(req.body)
-  res.render('index');
-});
+// app.get('/quizzes', (req, res) => {
+//   // console.log(req.body)
+//   res.render('index');
+// });
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

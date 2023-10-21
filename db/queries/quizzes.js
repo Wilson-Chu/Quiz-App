@@ -9,7 +9,7 @@ const getAllPublicQuizzes = () => {
       // console.log(data.rows)
       return data.rows;
     })
-    .catch(err => {console.log(err.message)})
+    .catch(err => {console.log(err.message)});
 };
 
-module.exports = { getAllPublicQuizzes };
+module.exports =  {getAllPublicQuizzes} ;
