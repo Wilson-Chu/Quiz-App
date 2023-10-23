@@ -32,9 +32,10 @@ const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
 const quizzesApiRoutes = require('./routes/quizzes-api');
-const resultsRoutes = require('./routes/results');
-const resultsApiRoutes = require('./routes/results-api');
-
+const quizbyIdApiRoutes = require('./routes/quiz-by-id-api');
+const newQuiz = require('./routes/new-quiz.js');
+const newQuestion = require('./routes/new-question.js');
+const showQuiz = require('./routes/quiz-show.js');
 // const quizzesRoutes = require('./routes/quizzes');
 
 // Mount all resource routes
@@ -43,11 +44,11 @@ const resultsApiRoutes = require('./routes/results-api');
 app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/api/quizzes', quizzesApiRoutes);
-app.use('/api/results', resultsApiRoutes);
-
+app.use('/api/quiz-by-id', quizbyIdApiRoutes);
 app.use('/users', usersRoutes);
-app.use('/results', resultsRoutes);
-
+app.use('/new-quiz', newQuiz);
+app.use('/new-question', newQuestion);
+app.use('/quizzes', showQuiz);
 // app.use('/quizData', quizzesRoutes);
 // Note: mount other resources here, using the same pattern above
 
