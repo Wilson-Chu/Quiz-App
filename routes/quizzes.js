@@ -3,16 +3,7 @@ const router  = express.Router();
 const db = require('../db/queries/quizzes');
 
 router.get('/', (req, res) => {
-  db.getAllPublicQuizzes()
-    .then(data => {
-      const quizData = data.rows
-      res.send( quizData );
-    })
-    .catch(err => {
-      res
-        .status(500)
-        .json({ error: err.message });
-    });
+  res.render('quiz-show')
 });
 
 module.exports = router;
