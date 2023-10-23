@@ -2,7 +2,7 @@ const db = require('../connection');
 
 const getAllPublicQuizzes = () => {
   return db.query(`
-  SELECT title, description 
+  SELECT title, description, id 
   FROM quizzes
   WHERE private = false`)
     .then(data => {
