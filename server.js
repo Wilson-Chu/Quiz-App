@@ -8,8 +8,8 @@ require('dotenv').config();
 const sassMiddleware = require('./lib/sass-middleware');
 const express = require('express');
 const morgan = require('morgan');
-const cookieSession = require('cookie-session');
-const bcrypt = require("bcryptjs");
+// const cookieSession = require('cookie-session');
+// const bcrypt = require("bcryptjs");
 
 const PORT = process.env.PORT || 8080;
 const app = express();
@@ -30,11 +30,11 @@ app.use(
   })
 );
 app.use(express.static('public'));
-app.use(cookieSession({
-  name: 'session',
-  keys: [generateRandomString(12)],
-  maxAge: 24 * 60 * 60 * 1000 // 24 hours
-}));
+// app.use(cookieSession({
+//   name: 'session',
+//   keys: [generateRandomString(12)],
+//   maxAge: 24 * 60 * 60 * 1000 // 24 hours
+// }));
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
@@ -83,7 +83,7 @@ app.get('/login', (req, res) => {
 });
 
 app.post('/logout', (req, res) => {
-  req.session = null;
+  // req.session = null;
   res.redirect('login');
 });
 
