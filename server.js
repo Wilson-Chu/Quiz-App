@@ -32,6 +32,9 @@ const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
 const quizzesApiRoutes = require('./routes/quizzes-api');
+const resultsRoutes = require('./routes/results');
+const resultsApiRoutes = require('./routes/results-api');
+
 // const quizzesRoutes = require('./routes/quizzes');
 
 // Mount all resource routes
@@ -40,7 +43,11 @@ const quizzesApiRoutes = require('./routes/quizzes-api');
 app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/api/quizzes', quizzesApiRoutes);
+app.use('/api/results', resultsApiRoutes);
+
 app.use('/users', usersRoutes);
+app.use('/results', resultsRoutes);
+
 // app.use('/quizData', quizzesRoutes);
 // Note: mount other resources here, using the same pattern above
 
@@ -54,6 +61,14 @@ app.get('/', (req, res) => {
 
 app.get('/quizzes', (req, res) => {
   res.render('index');
+});
+
+app.get('/register', (req, res) => {
+  res.render('register');
+});
+
+app.get('/login', (req, res) => {
+  res.render('login');
 });
 
 app.listen(PORT, () => {

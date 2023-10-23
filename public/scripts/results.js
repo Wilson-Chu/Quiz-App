@@ -1,0 +1,30 @@
+$(document).ready(function () {
+
+
+  // const createQuizElement = (quizData) => {
+
+  //   const layout = `
+  // <h2>${quizData.title}</h2>
+  // <h4>${quizData.description}<h4>
+  // `;
+
+  //   return layout;
+  // };
+
+  // const renderQuizzes = function (quizzes) {
+  //   quizzes.forEach((quiz) => {
+  //     // calls createquizElement for each quiz
+  //     const quizElement = createQuizElement(quiz);
+
+  //     // takes return value and appends it to the quizzes container
+  //     $('main').append(quizElement);
+  //   });
+  // };
+
+  $.get('/api/results', (data) => {
+    for (let results of data) {
+      $('main').append(`<h4>${results.title}: ${results.result}<h4/>`);
+    }
+  });
+
+});
