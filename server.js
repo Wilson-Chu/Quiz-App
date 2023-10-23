@@ -72,6 +72,12 @@ app.get('/login', (req, res) => {
   res.render('login');
 });
 
+app.post('/logout', (req, res) => {
+  // clear cookies/session here...
+
+  res.redirect('login');
+});
+
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
