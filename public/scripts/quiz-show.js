@@ -19,7 +19,7 @@ $(document).ready(function () {
 
     console.log(quiz)
 
-    if (!quiz.question) {
+    if (!quiz[0]) {
       $('main').append(`<h2>The creator hasn't added questions yet!🥲</h2>`);
       return;
     }
