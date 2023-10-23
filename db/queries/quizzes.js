@@ -6,8 +6,7 @@ const getAllPublicQuizzes = () => {
   FROM quizzes
   WHERE private = false`)
     .then(data => {
-      // console.log(data.rows)
-      return data.rows;
+      return data;
     })
     .catch(err => {console.log(err.message)})
 };

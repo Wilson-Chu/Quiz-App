@@ -1,8 +1,18 @@
 const express = require('express');
 const router  = express.Router();
+const db = require('../db/queries/quizzes');
 
 router.get('/', (req, res) => {
-  res.render('quizzes');
-}); 
+  db.getAllPublicQuizzes()
+    .then(data => {
+      const quizData = data.rows
+      res.send( quizData );
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
+});
 
 module.exports = router;

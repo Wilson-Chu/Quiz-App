@@ -41,7 +41,7 @@ app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/api/quizzes', quizzesApiRoutes);
 app.use('/users', usersRoutes);
-// app.use('/quizzes', quizzesRoutes);
+app.use('/quizData', quizzesRoutes);
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -53,7 +53,6 @@ app.get('/', (req, res) => {
 });
 
 app.get('/quizzes', (req, res) => {
-  // console.log(req.body)
   res.render('index');
 });
 
