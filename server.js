@@ -31,6 +31,8 @@ app.use(express.static('public'));
 const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
+const loginRoutes = require('./routes/login');
+
 const quizzesApiRoutes = require('./routes/quizzes-api');
 const quizbyIdApiRoutes = require('./routes/quiz-by-id-api');
 const newQuiz = require('./routes/new-quiz.js');
@@ -46,6 +48,8 @@ app.use('/api/widgets', widgetApiRoutes);
 app.use('/api/quizzes', quizzesApiRoutes);
 app.use('/api/quiz-by-id', quizbyIdApiRoutes);
 app.use('/users', usersRoutes);
+app.use('/login', loginRoutes);
+
 app.use('/new-quiz', newQuiz);
 app.use('/new-question', newQuestion);
 app.use('/quizzes', showQuiz);
@@ -60,17 +64,12 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
-app.get('/quizzes', (req, res) => {
-  res.render('index');
-});
 
 app.get('/register', (req, res) => {
   res.render('register');
 });
 
-app.get('/login', (req, res) => {
-  res.render('login');
-});
+
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
