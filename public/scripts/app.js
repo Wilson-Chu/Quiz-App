@@ -22,7 +22,7 @@ $(document).ready(function () {
     });
   };
 
-  $.get('/quizData', (data) => {
+  $.get('/api/quizzes', (data) => {
     console.log(data)
     $('main').empty();
     renderQuizzes(data);

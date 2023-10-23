@@ -6,8 +6,7 @@ router.get('/', (req, res) => {
   db.getAllPublicQuizzes()
     .then(data => {
       const quizData = data.rows
-      const [ quizObj ] = quizData
-      res.json({ quizObj });
+      res.json( quizData );
     })
     .catch(err => {
       res
