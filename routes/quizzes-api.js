@@ -5,7 +5,7 @@ const db = require('../db/queries/quizzes');
 router.get('', (req, res) => {
   db.getAllPublicQuizzes()
     .then((quizzes) => {
-      res.send({ quizzes });
+      res.send( quizzes );
     })
     .catch(err => {
       res
