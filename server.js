@@ -41,10 +41,15 @@ const loginRoutes = require('./routes/login');
 
 const quizzesApiRoutes = require('./routes/quizzes-api');
 const quizbyIdApiRoutes = require('./routes/quiz-by-id-api');
+const resultsApiRoutes = require('./routes/results-api');
+
+
 const newQuiz = require('./routes/new-quiz.js');
 const newQuestion = require('./routes/new-question.js');
 const showQuiz = require('./routes/quiz-show.js');
 const quizzesRoutes = require('./routes/quizzes');
+const resultsRoutes = require('./routes/results');
+
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -52,14 +57,19 @@ const quizzesRoutes = require('./routes/quizzes');
 app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/api/quizzes', quizzesApiRoutes);
+app.use('/api/results', resultsApiRoutes);
+
 app.use('/api/quiz-by-id', quizbyIdApiRoutes);
 app.use('/users', usersRoutes);
 app.use('/login', loginRoutes);
+app.use('/results', resultsRoutes);
+
 
 app.use('/new-quiz', newQuiz);
 app.use('/new-question', newQuestion);
 app.use('/quizzes', showQuiz);
 app.use('/quizData', quizzesRoutes);
+
 // Note: mount other resources here, using the same pattern above
 
 // Home page

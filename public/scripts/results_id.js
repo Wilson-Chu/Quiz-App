@@ -5,8 +5,8 @@ $(document).ready(function () {
 
   console.log(id, + "HERE ")
 
-$.get(`/api/results/${id}`, (data) => {
-  console.log(data)
-  $('main').append(`<h4>${results.title}: ${results.result}<h4/>`);
+$.get(`/api/results/${id}`, (results) => {
+  console.log(results)
+  $('main').append(`<h4>${results[0].title}: ${results[0].result}<h4/>`);
 });
 });
