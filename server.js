@@ -6,11 +6,7 @@ const sassMiddleware = require('./lib/sass-middleware');
 const express = require('express');
 const morgan = require('morgan');
 const cookieSession = require('cookie-session');
-<<<<<<< HEAD
 const bcrypt = require("bcryptjs");
-=======
-
->>>>>>> de0f3c2e74f905b450670b4e1fc70d00a378be25
 
 const PORT = process.env.PORT || 8080;
 const app = express();
@@ -32,14 +28,9 @@ app.use(
 );
 app.use(express.static('public'));
 app.use(cookieSession({
-<<<<<<< HEAD
   name: 'session',
   keys: [generateRandomString(12)],
   maxAge: 24 * 60 * 60 * 1000 // 24 hours
-=======
-  name: 'whatever',
-  keys: ['vsjdnvuseiovn']
->>>>>>> de0f3c2e74f905b450670b4e1fc70d00a378be25
 }));
 
 // Separated Routes for each Resource
