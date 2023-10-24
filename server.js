@@ -1,6 +1,9 @@
 // load .env data into process.env
 require('dotenv').config();
 
+// load helpers
+const { generateRandomString } = require('./helpers');
+
 // Web server config
 const sassMiddleware = require('./lib/sass-middleware');
 const express = require('express');
