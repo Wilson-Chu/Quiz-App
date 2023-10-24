@@ -66,19 +66,12 @@ app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/api/quizzes', quizzesApiRoutes);
 app.use('/api/results', resultsApiRoutes);
-
 app.use('/api/quiz-by-id', quizbyIdApiRoutes);
 app.use('/users', usersRoutes);
-<<<<<<< HEAD
-
-
 app.use('/new-quiz', newQuiz);
-
 app.use('/new-question', newQuestion);
-=======
 app.use('/new', newQuiz);
 app.use('/edit', newQuestion);
->>>>>>> feature/questions
 app.use('/quizzes', showQuiz);
 app.use('/api/results', resultsApiRoutes);
 app.use('/results', resultsRoutes);
