@@ -1,6 +1,3 @@
-// Load helper functions
-const { generateRandomString, authenticateUser, getUserByEmail } = require("./helpers");
-
 // load .env data into process.env
 require('dotenv').config();
 
@@ -9,7 +6,11 @@ const sassMiddleware = require('./lib/sass-middleware');
 const express = require('express');
 const morgan = require('morgan');
 const cookieSession = require('cookie-session');
+<<<<<<< HEAD
 const bcrypt = require("bcryptjs");
+=======
+
+>>>>>>> de0f3c2e74f905b450670b4e1fc70d00a378be25
 
 const PORT = process.env.PORT || 8080;
 const app = express();
@@ -31,9 +32,14 @@ app.use(
 );
 app.use(express.static('public'));
 app.use(cookieSession({
+<<<<<<< HEAD
   name: 'session',
   keys: [generateRandomString(12)],
   maxAge: 24 * 60 * 60 * 1000 // 24 hours
+=======
+  name: 'whatever',
+  keys: ['vsjdnvuseiovn']
+>>>>>>> de0f3c2e74f905b450670b4e1fc70d00a378be25
 }));
 
 // Separated Routes for each Resource
@@ -41,17 +47,23 @@ app.use(cookieSession({
 const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
+const loginRoutes = require('./routes/login');
+const logoutRoutes = require('./routes/logout');
+
+const register = require('./routes/register');
+
+
 const quizzesApiRoutes = require('./routes/quizzes-api');
 const quizbyIdApiRoutes = require('./routes/quiz-by-id-api');
+const resultsApiRoutes = require('./routes/results-api');
+
+
 const newQuiz = require('./routes/new-quiz.js');
 const newQuestion = require('./routes/new-question.js');
 const showQuiz = require('./routes/quiz-show.js');
+const quizzesRoutes = require('./routes/quizzes');
 const resultsRoutes = require('./routes/results');
-const resultsApiRoutes = require('./routes/results-api');
-const register = require('./routes/register.js');
-const login = require('./routes/login.js');
-const logout = require('./routes/logout.js');
-// const quizzesRoutes = require('./routes/quizzes');
+
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -59,16 +71,21 @@ const logout = require('./routes/logout.js');
 app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/api/quizzes', quizzesApiRoutes);
+app.use('/api/results', resultsApiRoutes);
+
 app.use('/api/quiz-by-id', quizbyIdApiRoutes);
 app.use('/users', usersRoutes);
-app.use('/new', newQuiz);
+
+
+app.use('/new-quiz', newQuiz);
+
 app.use('/new-question', newQuestion);
 app.use('/quizzes', showQuiz);
 app.use('/api/results', resultsApiRoutes);
 app.use('/results', resultsRoutes);
 app.use('/register', register);
-app.use('/login', login);
-app.use('/logout', logout);
+app.use('/logout', logoutRoutes);
+app.use('/login', loginRoutes);
 // app.use('/quizData', quizzesRoutes);
 // Note: mount other resources here, using the same pattern above
 
@@ -82,6 +99,19 @@ app.get('/', (req, res) => {
 
 app.get('/quizzes', (req, res) => {
   res.render('index');
+});
+
+app.get('/register', (req, res) => {
+  res.render('register');
+});
+
+app.get('/login', (req, res) => {
+  res.render('login');
+});
+
+app.post('/logout', (req, res) => {
+  // req.session = null;
+  res.redirect('login');
 });
 
 app.listen(PORT, () => {

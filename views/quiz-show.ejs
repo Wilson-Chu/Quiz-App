@@ -17,13 +17,25 @@
   <link rel="stylesheet" href="/styles/nav.css" />
 
   <script src="/vendor/jquery-3.0.0.js"></script>
-  <script src="/scripts/quiz-show.js"></script>
+  <script src="/scripts/quiz-show.js" defer></script>
 </head>
 
 <body>
   <%- include('./partials/_header') -%>
     <%- include('./partials/_nav') -%>
       <main>
+        <article id="quiz-container">          
+
+        </article>
+        <br>
+        <div class="my_content_container">
+          <button type="submit" class="btn">
+
+            <!-- <a href="/results/1">Submit</a> -->
+            Submit
+          </button>
+      </div>
+
       </main>
 </body>
 

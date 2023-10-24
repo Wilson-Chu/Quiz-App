@@ -31,7 +31,7 @@ router.post('/', (req, res) => {
   // ADD NEW USER AND INFO TO PSQL DATABASE
   dbNewUser.createNewUser({ username: username, email: email, password: bcrypt.hashSync(password, 10) });
 
-  req.session.user_id = randomUserId; // how do I retrieve the user_id of new user ???
+  req.session.user_id = 999; // how do I retrieve the user_id of new user ???
 
   res.redirect("/quizzes");
 });
