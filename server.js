@@ -75,6 +75,7 @@ app.use('/api/results', resultsApiRoutes);
 app.use('/results', resultsRoutes);
 app.use('/register', register);
 app.use('/logout', logoutRoutes);
+app.use('/login', loginRoutes);
 // app.use('/quizData', quizzesRoutes);
 // Note: mount other resources here, using the same pattern above
 
