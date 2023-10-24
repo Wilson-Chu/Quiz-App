@@ -50,7 +50,6 @@ $(document).ready(function() {
     let correctAnswers = 0;
     const quizData = data;
     const quizElement = createQuestionElement(quizData[n]);
-    console.log(JSON.stringify(quizData[1]) + 'this')
     $('#quiz-container').append(quizElement);
     $('.btn').on('click',
       function() {
@@ -59,7 +58,6 @@ $(document).ready(function() {
         if (answer === quizData[n].answer) {
           correctAnswers++;
         }
-        console.log(correctAnswers);
         n++;
         $('#quiz-container').empty();
         if (n < quizData.length) {
@@ -71,6 +69,8 @@ $(document).ready(function() {
 
             `<form method="post" action="/results">   <input type="submit"  value="Submit">
             <input type="hidden" name="score" value="${correctAnswers}" />
+            <input type="hidden" name="quizID" value="${id}" />
+
             Get Results
             
             `);
