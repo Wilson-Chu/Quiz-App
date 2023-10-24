@@ -6,7 +6,7 @@ const dbNewUser = require('../db/queries/newUser');
 const dbLogin = require('../db/queries/login');
 const bcrypt = require("bcryptjs");
 
-const users = dbUsers;
+const users = dbUsers.getUsers();
 
 router.get('/', (req, res) => {
   const templateVars = { user: authenticateUser(req.session.userId, users) };
