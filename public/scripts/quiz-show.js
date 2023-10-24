@@ -87,35 +87,8 @@ $(document).ready(function() {
 
         })
 
-        // $('#answers').closest('#answers').replaceWith(`<h4>Response Saved</h4>`);
       });
 
   });
-  // .then((data) => {
-  //   // let n = 0;
-  //   // let correctAnswers = 0;
-  //   // const quizData = data;
-  //   // const quizElement = createQuestionElement(quizData[n]);
-  //   // $('#quiz-container').append(quizElement);
-  //   // $('.btn').on('click',
-  //   //   function() {
-  //   //     const selectedOption = document.querySelector('input[name="answer"]:checked')
-  //   //     const answer = selectedOption.value;
-  //   //     if ( answer === quizData[n].answer) {
-  //   //       correctAnswers++;
-  //   //     }
-  //   //     console.log(correctAnswers);
-  //   //     n++;
-  //   //     $('#quiz-container').empty();
-  //   //     if (n < quizData.length) {
-  //   //       $('#quiz-container').append(createQuestionElement(quizData[n]));
-  //   //     }
-  //   //     else {
-  //   //       $('#quiz-container').empty();
-  //   //     }
-
-  //   //     // $('#answers').closest('#answers').replaceWith(`<h4>Response Saved</h4>`);
-  //   //   });
-
-  // });
+  
 });
