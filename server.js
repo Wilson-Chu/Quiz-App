@@ -46,6 +46,9 @@ const quizbyIdApiRoutes = require('./routes/quiz-by-id-api');
 const newQuiz = require('./routes/new-quiz.js');
 const newQuestion = require('./routes/new-question.js');
 const showQuiz = require('./routes/quiz-show.js');
+const register = require('./routes/register.js');
+const login = require('./routes/login.js');
+const logout = require('./routes/logout.js');
 // const quizzesRoutes = require('./routes/quizzes');
 
 // Mount all resource routes
@@ -59,6 +62,9 @@ app.use('/users', usersRoutes);
 app.use('/new-quiz', newQuiz);
 app.use('/new-question', newQuestion);
 app.use('/quizzes', showQuiz);
+app.use('/register', register);
+app.use('/login', login);
+app.use('/logout', logout);
 // app.use('/quizData', quizzesRoutes);
 // Note: mount other resources here, using the same pattern above
 
@@ -72,19 +78,6 @@ app.get('/', (req, res) => {
 
 app.get('/quizzes', (req, res) => {
   res.render('index');
-});
-
-app.get('/register', (req, res) => {
-  res.render('register');
-});
-
-app.get('/login', (req, res) => {
-  res.render('login');
-});
-
-app.post('/logout', (req, res) => {
-  // req.session = null;
-  res.redirect('login');
 });
 
 app.listen(PORT, () => {
