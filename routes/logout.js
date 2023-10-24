@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  // req.session = null;
+  req.session = null;
   res.redirect('login');
 });
 

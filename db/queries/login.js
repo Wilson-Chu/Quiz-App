@@ -12,4 +12,4 @@ const getUserWithEmail = function(email) {
     });
 };
 
-module.exports = {getUserWithEmail}
+module.exports = { getUserWithEmail };
