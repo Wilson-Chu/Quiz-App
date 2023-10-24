@@ -29,13 +29,10 @@
           <textarea name="quiz-title" placeholder="Quiz Title"></textarea>
           <textarea name="quiz-description" placeholder="Quiz Description"></textarea>
         </form>
-        <form class="new-question" action="POST">
-          <textarea name="question" placeholder="Question"></textarea>
-          <textarea name="answer" placeholder="Correct Answer"></textarea>
-          <textarea name="answer" placeholder="Option 1"></textarea>
-          <textarea name="answer" placeholder="Option 2"></textarea>
-          <textarea name="answer" placeholder="Option 3"></textarea>
-          <button type="submit">Add Question</button>
+        <form action="POST">
+          <div class="question-container">
+          </div>
+          <button class="add-question" type="button">Add Question</button>
           <button type="submit">Create Quiz</button>
         </form>
       </main>

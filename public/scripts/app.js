@@ -5,9 +5,11 @@ $(document).ready(function () {
   const createQuizElement = (quizData) => {
 
     const layout = `
-  <h2>${quizData.title}</h2>
-  <h4>${quizData.description}<h4>
-  `;
+    <a href='http://localhost:8080/quizzes/${quizData.id}'>
+      <h2>${quizData.title}</h2>
+      <h4>${quizData.description}<h4>
+    </a>
+    `;
 
     return layout;
   };
