@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../db/queries/login');
+
 
 router.get('/', (req, res) => {
   res.render('login');
@@ -23,6 +23,7 @@ router.post('/', (req, res) => {
     if ((password !== user.password)) {
       return res.send({ error: "error" });
     }
+
 
     req.session.userId = user.id;
     res.redirect('/quizzes');
