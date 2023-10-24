@@ -47,7 +47,7 @@ $(document).ready(function() {
     });
   });
 
-  $.get(`/api/quiz-by-id/${id}`, function (data) {
+  $.get(`/api/quiz-by-id/${id}`, function(data) {
     let n = 0;
     let correctAnswers = 0;
     const quizData = data;
@@ -70,25 +70,24 @@ $(document).ready(function() {
           $('#quiz-container').empty();
           $('.btn').replaceWith(
 
-            `<button type="submit" class="btn" id="result">
-            <!-- <a href="/results/1">Submit</a> -->
+            `<form method="post" action="/results">   <input type="submit"  value="Submit">
+            <input type="hidden" name="score" value="${correctAnswers}" />
             Get Results
-          </button>`);
+            
+            `);
+            // </button>
         }
-        $('#result').on('click', function () {
+        $('#result').on('click', function() {
           $('#quiz-container').empty();
           $('#result').remove();
           $('#quiz-container').append(`
           <h1>Your score is:<h1>
           <h4> ${correctAnswers}/${quizData.length} <h4>
           `);
-
-
-
-        })
+        });
 
       });
 
   });
-  
+
 });

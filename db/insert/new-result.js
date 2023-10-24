@@ -1,20 +1,20 @@
 const db = require('../connection');
 
-const submitResult = (score) => { //writes question
+const submitResult = (input) => { //writes question
 
-  const {title, description} = input;
+  const {score,contestant_id,quiz_id} = input;
 
   return db.query(`
-  INSERT INTO quizzes(title, description, owner_id)
-  VALUES($1, $2, 1)
+  INSERT INTO results(quiz_id, contestant_id, attempt, result)
+  VALUES($1, $2,10, $3)
   RETURNING *;
   `,
-  [title, description])
-    .then(data => {
-      console.log(data.rows)
-      return data.rows;
-    })
-    .catch(err => {console.log(err.message)})
+  [quiz_id,contestant_id,score])
+    // .then(data => {
+    //   console.log(data.rows)
+    //   return data.rows;
+    // })
+    // .catch(err => {console.log(err.message)})
 };
 
 module.exports = { submitResult };
