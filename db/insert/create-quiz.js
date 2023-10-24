@@ -3,14 +3,14 @@ const db = require('../connection');
 
 const createQuiz = (input) => { //writes question
 
-  const {title, description} = input;
+  const {title, description, userId} = input;
 
   return db.query(`
   INSERT INTO quizzes(title, description, owner_id)
-  VALUES($1, $2, 1)
+  VALUES($1, $2, $3)
   RETURNING *;
   `,
-  [title, description])
+  [title, description, userId])
     .then(data => {
       console.log(data.rows)
       return data.rows;
