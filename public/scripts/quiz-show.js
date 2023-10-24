@@ -52,6 +52,7 @@ $(document).ready(function() {
     let correctAnswers = 0;
     const quizData = data;
     const quizElement = createQuestionElement(quizData[n]);
+    console.log(JSON.stringify(quizData[1]) + 'this')
     $('#quiz-container').append(quizElement);
     $('.btn').on('click',
       function() {
@@ -75,17 +76,7 @@ $(document).ready(function() {
             Get Results
             
             `);
-            // </button>
         }
-        $('#result').on('click', function() {
-          $('#quiz-container').empty();
-          $('#result').remove();
-          $('#quiz-container').append(`
-          <h1>Your score is:<h1>
-          <h4> ${correctAnswers}/${quizData.length} <h4>
-          `);
-        });
-
       });
 
   });

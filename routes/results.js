@@ -11,7 +11,7 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   const score = req.body.score;
   const contestant_id = req.session.id || 3;
-  const quiz_id = 3;
+  const quiz_id = 1;
   const data = { score, contestant_id, quiz_id };
 
   db.submitResult(data)
