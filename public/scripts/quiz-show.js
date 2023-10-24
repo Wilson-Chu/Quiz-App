@@ -3,8 +3,8 @@ $(document).ready(function() {
   const id = window.location.pathname.replace('/quizzes/', '');
 
   const createQuestionElement = (data) => {
-    
-    
+
+
     let layout = `
     
     
@@ -12,19 +12,21 @@ $(document).ready(function() {
 
     <div id="answers">
     
-    <button type="button" class="btn">${data.answer}</button>
-    <button type="button" class="btn" id="option1">${data.option_1}</button>
+    <label> <input type="radio" name="answer" id="a" value="${data.answer}"/>${data.answer} </label>
+    <label> <input type="radio" name="answer" id="b" value="${data.option_1}"/>${data.option_1} </label>
     `;
 
     //check if option 2 & 3 have beeen created
     if (data.option_2) {
-      layout += `<button type="button" class="btn btn-primary" id="option2"> ${data.option_2} </button>`;
+      layout += `    <label> <input type="radio" name="answer" id="c" value="${data.option_2}"/>${data.option_2} </label>
+      `;
     }
     if (data.option_3) {
-      layout += `<button type="button" class="btn btn-primary" id="option3">${data.option_3}</button>`;
+      layout += `    <label> <input type="radio" name="answer" id="d" value="${data.option_3}"/>${data.option_3} </label>
+      `;
     }
-    
-    layout +=`</div>`;
+
+    layout += `</div>`;
     return layout;
   };
 
@@ -45,13 +47,40 @@ $(document).ready(function() {
     });
   });
 
-  $.get(`/api/quiz-by-id/${id}`, (data) => {
-    renderQuiz(data);
-    console.log('i am NOT here');
+  $.get(`/api/quiz-by-id/${id}`, () => {
+    // renderQuiz(data);
+    // const quizData = data;
+    // console.log(quizData);
+    // console.log('i am NOT here');
 
-    $('.btn').on('click',
-      function() {
-        $('#answers').closest('#answers').replaceWith(`<h4>Response Saved</h4>`);
-      });
-  });
+    // $('.btn').on('submit',
+    //   function() {
+    //     $('#answers').closest('#answers').replaceWith(`<h4>Response Saved</h4>`);
+    //   });
+    // .done(console.log("it worked!", data))
+
+    // return data;
+  })
+    .then((data) => {
+      let n = 0;
+      const quizData = data;
+      const quizElement = createQuestionElement(quizData[n]);
+      $('#quiz-container').append(quizElement);
+      $('.btn').on('click',
+        function() {
+
+          n++;
+          console.log(quizData.length + "here", n);
+          $('#quiz-container').empty();
+          if (n < quizData.length) {
+            $('#quiz-container').append(createQuestionElement(quizData[n]));
+          }
+          else {
+            $('#quiz-container').empty();
+          }
+
+          // $('#answers').closest('#answers').replaceWith(`<h4>Response Saved</h4>`);
+        });
+
+    });
 });

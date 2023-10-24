@@ -38,6 +38,10 @@ const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
 const loginRoutes = require('./routes/login');
+const logoutRoutes = require('./routes/logout');
+
+const register = require('./routes/register');
+
 
 const quizzesApiRoutes = require('./routes/quizzes-api');
 const quizbyIdApiRoutes = require('./routes/quiz-by-id-api');
@@ -68,8 +72,11 @@ app.use('/results', resultsRoutes);
 app.use('/new-quiz', newQuiz);
 app.use('/new-question', newQuestion);
 app.use('/quizzes', showQuiz);
-app.use('/quizData', quizzesRoutes);
-
+app.use('/api/results', resultsApiRoutes);
+app.use('/results', resultsRoutes);
+app.use('/register', register);
+app.use('/logout', logoutRoutes);
+// app.use('/quizData', quizzesRoutes);
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -88,7 +95,14 @@ app.get('/register', (req, res) => {
   res.render('register');
 });
 
+app.get('/login', (req, res) => {
+  res.render('login');
+});
 
+app.post('/logout', (req, res) => {
+  // req.session = null;
+  res.redirect('login');
+});
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
