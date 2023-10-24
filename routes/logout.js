@@ -5,3 +5,5 @@ router.post('/', (req, res) => {
   // req.session = null;
   res.redirect('login');
 });
+
+module.exports = router;
