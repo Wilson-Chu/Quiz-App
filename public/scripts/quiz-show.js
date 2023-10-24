@@ -80,7 +80,7 @@ $(document).ready(function() {
           $('#result').remove();
           $('#quiz-container').append(`
           <h1>Your score is:<h1>
-          <h4> ${correctAnswers}/${quizData.length-1} <h4>
+          <h4> ${correctAnswers}/${quizData.length} <h4>
           `);
 
 
