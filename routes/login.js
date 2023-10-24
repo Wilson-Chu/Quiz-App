@@ -9,9 +9,9 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
-  console.log(email)
+  console.log(email);
   db.getUserWithEmail(email).then((user) => {
-    console.log(user)
+    console.log(user);
     if (!user) {
       return res.send({ error: "no user with that id" });
     }
@@ -30,5 +30,4 @@ router.post('/', (req, res) => {
   });
 });
 
-module.exports = router;
 module.exports = router;
