@@ -48,7 +48,7 @@ app.use('/api/widgets', widgetApiRoutes);
 app.use('/api/quizzes', quizzesApiRoutes);
 app.use('/api/quiz-by-id', quizbyIdApiRoutes);
 app.use('/users', usersRoutes);
-app.use('/quizzes', newQuiz);
+app.use('/new', newQuiz);
 app.use('/new-question', newQuestion);
 app.use('/quizzes', showQuiz);
 app.use('/api/results', resultsApiRoutes);

@@ -2,7 +2,15 @@ $(() => {
 
   $('form').on('submit', (evt) => {
 
-      $.post('/')
+    const data = {};
+    data.title = $("#title").val();
+    data.description = $("#description").val();
+
+      $.post('/new/quiz', data);
+
+    });
+    
+  });
 
   //   const question = `
   //   <div class="question-wrapper">
@@ -25,6 +33,3 @@ $(() => {
 
   //   console.log($('.delete-question').parent());
   //   $('.delete-question').closest('.new-question').remove()
-  });
-
-});

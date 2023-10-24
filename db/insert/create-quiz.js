@@ -1,13 +1,19 @@
+const e = require('express');
 const db = require('../connection');
 
 const createQuiz = (input) => { //writes question
+
+  const {title, description} = input;
+
   return db.query(`
-  INSERT INTO quizzes(title, description, private, owner_id)
-  VALUES($1, $2, $3, $4)
+  INSERT INTO quizzes(title, description, owner_id)
+  VALUES($1, $2, 1)
+  RETURNING *;
   `,
-  [title, description, private, owner_id])
+  [title, description])
     .then(data => {
-      return data;
+      console.log(data.rows)
+      return data.rows;
     })
     .catch(err => {console.log(err.message)})
 };
