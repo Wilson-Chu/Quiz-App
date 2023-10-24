@@ -65,11 +65,10 @@ app.use('/api/results', resultsApiRoutes);
 
 app.use('/api/quiz-by-id', quizbyIdApiRoutes);
 app.use('/users', usersRoutes);
-app.use('/login', loginRoutes);
-app.use('/results', resultsRoutes);
 
 
 app.use('/new-quiz', newQuiz);
+
 app.use('/new-question', newQuestion);
 app.use('/quizzes', showQuiz);
 app.use('/api/results', resultsApiRoutes);
