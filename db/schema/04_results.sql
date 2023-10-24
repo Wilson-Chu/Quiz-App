@@ -3,6 +3,5 @@ CREATE TABLE results (
   id SERIAL PRIMARY KEY NOT NULL,
   quiz_id INT REFERENCES quizzes(id) ON DELETE CASCADE NOT NULL,
   contestant_id INT REFERENCES users(id) ON DELETE CASCADE NOT NULL,
-  attempt SMALLINT NOT NULL,
-  result VARCHAR(10)
+  result INT
 );

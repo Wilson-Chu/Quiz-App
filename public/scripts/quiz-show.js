@@ -45,11 +45,12 @@ $(document).ready(function() {
     });
   });
 
-  $.get(`/api/quiz-by-id/${id}`, function (data) {
+  $.get(`/api/quiz-by-id/${id}`, function(data) {
     let n = 0;
     let correctAnswers = 0;
     const quizData = data;
     const quizElement = createQuestionElement(quizData[n]);
+    console.log(JSON.stringify(quizData[1]) + 'this')
     $('#quiz-container').append(quizElement);
     $('.btn').on('click',
       function() {
@@ -68,25 +69,14 @@ $(document).ready(function() {
           $('#quiz-container').empty();
           $('.btn').replaceWith(
 
-            `<button type="submit" class="btn" id="result">
-            <!-- <a href="/results/1">Submit</a> -->
+            `<form method="post" action="/results">   <input type="submit"  value="Submit">
+            <input type="hidden" name="score" value="${correctAnswers}" />
             Get Results
-          </button>`);
+            
+            `);
         }
-        $('#result').on('click', function () {
-          $('#quiz-container').empty();
-          $('#result').remove();
-          $('#quiz-container').append(`
-          <h1>Your score is:<h1>
-          <h4> ${correctAnswers}/${quizData.length} <h4>
-          `);
-
-
-
-        })
-
       });
 
   });
-  
+
 });
