@@ -7,14 +7,14 @@ const submitResult = (input) => { //writes question
   return db.query(`
   INSERT INTO results(quiz_id, contestant_id, attempt, result)
   VALUES($1, $2,10, $3)
-  RETURNING *;
+  RETURNING id;
   `,
   [quiz_id,contestant_id,score])
-    // .then(data => {
-    //   console.log(data.rows)
-    //   return data.rows;
-    // })
-    // .catch(err => {console.log(err.message)})
+    .then(data => {
+      console.log(data.rows)
+      return data.rows;
+    })
+    .catch(err => {console.log(err.message)})
 };
 
 module.exports = { submitResult };
