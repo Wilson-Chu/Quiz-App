@@ -11,7 +11,7 @@ const users = dbUsers;
 router.get('/', (req, res) => {
   const templateVars = { user: authenticateUser(req.session.userId, users) };
 
-  // if (req.session.user_id) {
+  // if (req.session.userId) {
   //   return res.redirect("/quizzes");
   // }
 
