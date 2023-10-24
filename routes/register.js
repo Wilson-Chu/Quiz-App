@@ -11,9 +11,9 @@ const users = dbUsers.getUsers();
 router.get('/', (req, res) => {
   const templateVars = { user: authenticateUser(req.session.userId, users) };
 
-  // if (req.session.userId) {
-  //   return res.redirect("/quizzes");
-  // }
+  if (req.session.userId) {
+    return res.redirect("/quizzes");
+  }
 
   res.render("register", templateVars);
 });
@@ -30,11 +30,12 @@ router.post('/', (req, res) => {
     return res.status(400).send("Email already taken. Please try another one.");
   }
 
+  console.log('congrats you made a new user!'); // only for testing
   // ADD NEW USER AND INFO TO PSQL DATABASE
   dbNewUser.createNewUser({ username: username, email: email, password: bcrypt.hashSync(password, 10) });
 
-  // retrieving the user_id of new user (from DB query)
-  req.session.userId = dbLogin.getUserWithEmail(email);
+  // retrieving the userId of new user (from DB query)
+  req.session.userId = dbLogin.getUserWithEmail(email).id;
 
   res.redirect("/quizzes");
 });
