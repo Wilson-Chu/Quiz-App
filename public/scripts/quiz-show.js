@@ -69,7 +69,7 @@ $(document).ready(function() {
 
             `<form method="post" action="/results">   <input type="submit"  value="Submit">
             <input type="hidden" name="score" value="${correctAnswers}" />
-            <input type="hidden" name="quizID" value="${id}" />
+            <input type="hidden" name="urlID" value="${id}" />
 
             Get Results
             

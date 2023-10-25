@@ -1,22 +1,21 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
   // Client facing scripts here
 
   const createQuizElement = (quizData) => {
 
     const layout = `
-      <a href='http://localhost:8080/quizzes/${quizData.id}'>
+      <a href='http://localhost:8080/quizzes/${quizData.url_id}'>
         <div class="quiz-container">
           <h2>${quizData.title}</h2>
           <h4>${quizData.description}<h4>
         <div>
       </a>
     `;
-
     return layout;
   };
 
-  const renderQuizzes = function (quizzes) {
+  const renderQuizzes = function(quizzes) {
     quizzes.forEach((quiz) => {
       // calls createquizElement for each quiz
       const quizElement = createQuizElement(quiz);
@@ -31,6 +30,5 @@ $(document).ready(function () {
     $('section').empty();
     renderQuizzes(data);
   });
-
 
 });
