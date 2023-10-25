@@ -7,8 +7,8 @@ $(document).ready(function() {
     <div class="quiz-container">
     <a href='http://localhost:8080/quizzes/${quizData.url_id}'>
           <h2>${quizData.title}</h2>
-          </a>
           <h4>${quizData.description}<h4>
+          </a>
         <div>
       <button type="submit" class="btn" id="${quizData.url_id}"> Share Quiz! </button>
     `;
@@ -30,7 +30,7 @@ $(document).ready(function() {
     renderQuizzes(data);
     $('.btn').on('click',function() {
       const id = $(this).attr('id') 
-      $(this).replaceWith(`<a href='http://localhost:8080/quizzes/${id}' <p> http://localhost:8080/quizzes/${id}  </p></a>`)
+      $(this).replaceWith(`<textarea>http://localhost:8080/quizzes/${id}></textarea>`)
     })
   });
 });
