@@ -1,9 +1,13 @@
 const express = require('express');
 const router  = express.Router();
 const db = require('../db/insert/create-quiz');
+const dbUser = require('../db/queries/login');
+const {generateRandomString} = require('../helpers');
+
 
 router.get('/', (req, res) => {
-  res.render('new-quiz');
+  const templateVars = { user: dbUser.getUserWithId(req.session.userId) };
+  res.render('new-quiz',templateVars);
 });
 
 // router.get('/:id', (req, res) => {
@@ -16,8 +20,9 @@ router.post('/', (req, res) => {
 
   const data = req.body
   data.userId = req.session.userId
+  data.urlID = generateRandomString(7);
 
-  console.log(data)
+  console.log(data.urlID + "THIS")
 
   db
     .createQuiz(data)

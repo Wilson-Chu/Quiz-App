@@ -1,4 +1,6 @@
+
 $(() => {
+  console.log("We in here");
 
   $('form').on('submit', (evt) => {
 
@@ -7,7 +9,6 @@ $(() => {
     data.description = $("#description").val();
     data.private = $("#private").val();
 
-    console.log(data);
 
     $.post('/new/quiz', data);
 
