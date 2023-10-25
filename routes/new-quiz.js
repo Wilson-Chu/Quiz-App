@@ -14,8 +14,13 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
 
+  const data = req.body
+  data.userId = req.session.userId
+
+  console.log(data)
+
   db
-    .createQuiz(req.body)
+    .createQuiz(data)
     .then((data) => {
       id = data[0].id
       return id;
