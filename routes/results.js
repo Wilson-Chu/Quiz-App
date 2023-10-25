@@ -22,19 +22,19 @@ router.post('/', (req, res) => {
 
 
   dbQuery.getQuizByUrlID(urlID)
-  .then((data) => {
-    quizID = data[0].id
-    const resultData = { score, contestant_id, quizID};
-    return resultData;
-  })
-  .then((resultData) => {
-    dbInsert.submitResult(resultData)
-      .then((data) => {
-        const id = data[0].id
-        res.redirect(`/results/${id}`)
-      })
-  })
-  .catch(err => console.log(err.message))
+    .then((data) => {
+      quizID = data[0].id;
+      const resultData = { score, contestant_id, quizID };
+      return resultData;
+    })
+    .then((resultData) => {
+      dbInsert.submitResult(resultData)
+        .then((data) => {
+          const id = data[0].id;
+          res.redirect(`/results/${id}`);
+        });
+    })
+    .catch(err => console.log(err.message));
 
 });
 
