@@ -17,8 +17,8 @@
   <link rel="stylesheet" href="/styles/nav.css" />
   <link rel="stylesheet" href="/styles/new-quiz.css" />
   <link
-  href="https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&family=Mansalva&family=Palanquin+Dark:wght@400;500;600&family=Rubik+Moonrocks&display=swap"
-  rel="stylesheet">
+    href="https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&family=Mansalva&family=Palanquin+Dark:wght@400;500;600&family=Rubik+Moonrocks&display=swap"
+    rel="stylesheet">
 
 
   <script src="/vendor/jquery-3.0.0.js"></script>
@@ -32,7 +32,8 @@
     <%- include('./partials/_nav') -%>
       <main>
         <form id="questions" action="/edit/<%= quizId %>" method="POST">
-        <div class="question-container"></div>
+          <h1>Add a question!</h1>
+          <div class="question-container"></div>
           <textarea id="question" name="question" placeholder="Question"></textarea>
           <textarea id="answer" name="answer" placeholder="Correct Answer"></textarea>
           <textarea id="option-1" name="option1" placeholder="Option 1"></textarea>
@@ -40,10 +41,10 @@
           <textarea id="option-3" name="option3" placeholder="Option 3"></textarea>
           <!-- <button id="delete-question" type="button">Delete Question</button> -->
           <!-- <button id="add-question" type="button">Add Question</button> -->
-        </div>
-        <button id="add-question" type="submit">Save Question</button>
-        <button id="done" type="button">Done</button>
-      </form>
+          </div>
+          <button id="add-question" type="submit">Save Question</button>
+          <button id="done" type="button">Done</button>
+        </form>
       </main>
 </body>
 
