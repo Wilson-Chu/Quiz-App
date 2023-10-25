@@ -10,11 +10,13 @@ const users = dbUsers.getUsers();
 
 router.get('/', (req, res) => {
   const templateVars = { user: authenticateUser(req.session.userId, users) };
+  // const isAuthenticated = req.session.userId ? true : false;
 
   if (req.session.userId) {
     return res.redirect("/quizzes");
   }
 
+  // res.json({ isAuthenticated });
   res.render("register", templateVars);
 });
 

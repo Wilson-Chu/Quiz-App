@@ -12,4 +12,16 @@ const getUserWithEmail = function(email) {
     });
 };
 
-module.exports = { getUserWithEmail };
+const getUserWithId = function(id) {
+  return db
+    .query(`SELECT username, password, id FROM users WHERE id = $1 `, [id])
+    .then(result => {
+      return result.rows[0];
+    })
+    .catch(err => {
+      console.log(err.message);
+      return null;
+    });
+};
+
+module.exports = { getUserWithEmail, getUserWithId };
