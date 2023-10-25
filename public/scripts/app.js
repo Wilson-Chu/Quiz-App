@@ -11,6 +11,7 @@ $(document).ready(function() {
           <h4>${quizData.description}<h4>
         <div>
       </a>
+      <button type="submit" class="btn"> Share Quiz! </button>
     `;
     return layout;
   };
@@ -25,10 +26,14 @@ $(document).ready(function() {
     });
   };
 
+
   $.get('/api/quizzes', (data) => {
     console.log(data);
     $('section').empty();
     renderQuizzes(data);
+    $('.btn').on('click',function() {
+      $('.btn').closest('button').replaceWith(`<h4> Here</h4>`)
+    })
   });
 
 });
