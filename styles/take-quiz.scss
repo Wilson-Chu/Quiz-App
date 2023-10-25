@@ -1,0 +1,44 @@
+article {
+  background-color: #7E52B7;
+  margin-top: 1em;
+  border-radius: 25px;
+  padding: 1.5em;
+
+  h2 {
+    margin-top: 0px;
+  }
+
+}
+
+.my-content-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+#answers {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  color: white;
+}
+
+button {
+  background-color: #503b9b;
+  border-radius: 20px;
+  border-style: none;
+  padding: .75em;
+  color: white;
+}
+
+// input {
+//   appearance: none;
+// }
+
+label {
+  cursor: pointer;
+}
+
+input:checked + label {
+  background-color: #503b9b
+}

@@ -5,7 +5,7 @@ const getQuizById = (id) => {
   SELECT question, answer, option_1, option_2
   FROM quizzes
   JOIN questions ON quiz_id = quizzes.id
-  WHERE quiz_id = $1
+  WHERE url_id = $1
   `,
   [id])
     .then(data => {
