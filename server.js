@@ -72,7 +72,7 @@ app.use('/new-quiz', newQuiz);
 app.use('/new-question', newQuestion);
 app.use('/new', newQuiz);
 app.use('/edit', newQuestion);
-app.use('/quizzes', showQuiz);
+app.use('/quizzes', quizzesRoutes);
 app.use('/api/results', resultsApiRoutes);
 app.use('/results', resultsRoutes);
 app.use('/register', register);
@@ -86,24 +86,12 @@ app.use('/login', loginRoutes);
 // Separate them into separate routes files (see above).
 
 app.get('/', (req, res) => {
-  res.render('index');
+  const templateVars = {user: null};
+  res.render('index', templateVars);
 });
 
 app.get('/quizzes', (req, res) => {
   res.render('index');
-});
-
-app.get('/register', (req, res) => {
-  res.render('register');
-});
-
-app.get('/login', (req, res) => {
-  res.render('login');
-});
-
-app.post('/logout', (req, res) => {
-  // req.session = null;
-  res.redirect('login');
 });
 
 app.listen(PORT, () => {
