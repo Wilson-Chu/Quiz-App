@@ -1,7 +1,28 @@
-.navbar {
+nav {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 80%;
+  background-color: #503B9B;
+  padding: 2em;
+  height: 100%;
+  // visibility: hidden;
+}
+.navbar-nav {
   display:flex;
   flex-direction: column;
-  position: fixed;
   top: 2em;
+  background-color: #503B9B;
   right: 2em;
+
+  i {
+    color: white;
+  }
+}
+
+input {
+  background-color: #503B9B;
+  border-color: #503B9B;
+  border-style: none;
+  color: white;
 }

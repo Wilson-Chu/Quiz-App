@@ -1,27 +1,13 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-success">
-  <a class="navbar-brand" href="/urls"></a>
-    <form method="GET" action="/login"> <input type="submit" value="Log in"></form>
-    <form method="GET" action="/register"> <input type="submit" value="Create New Account"></form>
-    <form method="POST" action="/logout">
-      Currently logged in as: <input type="submit" value="Log out">
-    </form>
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarNavAltMarkup"
-    aria-controls="navbarNavAltMarkup"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-  >
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+<nav hidden>
     <div class="navbar-nav">
-      <a class="nav-item nav-link" href="/urls">Account</a>
-      <a class="nav-item nav-link" href="/quizzes">My Quizzes</a>
-      <a class="nav-item nav-link" href="/results">My Results</a>
-      <a class="nav-item nav-link" href="/logout">Log Out</a>
+      <form method="GET" action="/login"><i class="fa-solid fa-right-to-bracket"></i> <input type="submit" value="Log in"></form><br>
+      <form method="GET" action="/register"><i class="fa-solid fa-user-plus"></i><input type="submit" value="Create New Account"></form><br>
+      <form method="POST" action="/logout"><i class="fa-solid fa-right-from-bracket"></i><input type="submit" value="Log out"></form><br>
+      <br>
+      <a><input type="submit" class="nav-item nav-link" href="/urls" value="Account"></a><br>
+      <a><input type="submit" class="nav-item nav-link" href="/quizzes" value="My Quizzes"></a><br>
+      <a><input type="submit" class="nav-item nav-link" href="/results" value="My Results"></a><br>
+      <a><input type="submit" class="nav-item nav-link" href="/logout" value="Log Out"></a><br>
     </div>
   </div>
 </nav>
