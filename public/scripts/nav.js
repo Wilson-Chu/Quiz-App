@@ -6,6 +6,12 @@ $(document).ready(function() {
     $("main").toggleClass("blur");
   }));
 
+  console.log($.cookie)
+
+  if (!$.cookie){
+    window.location.href = 'login'
+  }
+
   // $.ajax({
   //   url: '../routes/login.js',
   //   method: 'GET',
