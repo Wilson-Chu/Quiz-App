@@ -5,7 +5,13 @@ const bcrypt = require("bcryptjs");
 
 
 router.get('/', (req, res) => {
-  res.render('login');
+  const templateVars = { user: db.getUserWithId(req.session.userId) };
+
+  if (req.session.userId) {
+    return res.redirect("/quizzes");
+  }
+
+  res.render('login', templateVars);
 });
 
 router.post('/', (req, res) => {

@@ -1,8 +1,11 @@
 <nav hidden>
     <div class="navbar-nav">
+      <% if (!user) { %>
       <form method="GET" action="/login"><i class="fa-solid fa-right-to-bracket"></i> <input type="submit" value="Log in"></form><br>
       <form method="GET" action="/register"><i class="fa-solid fa-user-plus"></i><input type="submit" value="Create New Account"></form><br>
+      <% } else { %>
       <form method="POST" action="/logout"><i class="fa-solid fa-right-from-bracket"></i><input type="submit" value="Log out"></form><br>
+      <% } %>
       <br>
       <a><input type="submit" class="nav-item nav-link" href="/urls" value="Account"></a><br>
       <a><input type="submit" class="nav-item nav-link" href="/quizzes" value="My Quizzes"></a><br>
