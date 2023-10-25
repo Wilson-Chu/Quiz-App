@@ -32,6 +32,9 @@
         <form class="new-quiz" action="/new" method="POST">
           <textarea id="quiz-title" name="title" placeholder="Quiz Title"></textarea>
           <textarea id="quiz-description" name="description" placeholder="Quiz Description"></textarea>
+            <div id="private">
+            <input type="checkbox" id="private" name="private" value="true"> Make Quiz Private
+          </div>
           <button type="submit">Create Quiz</button>
         </form>
       </main>
