@@ -10,8 +10,7 @@ $(document).ready(function() {
     }
     $('.btn').on('click', function() {
       const id = $(this).attr('id');
-      $(this).replaceWith(`<a href='http://localhost:8080/quizzes/${id}' <p> http://localhost:8080/quizzes/${id}  </p></a>`);
+      $(this).replaceWith(`<a href='http://localhost:8080/results/${id}' <p> http://localhost:8080/results/${id}  </p></a>`);
     });
   });
-
 });
