@@ -3,29 +3,38 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  min-height: 100vh;
+  min-height: 100%;
   background: white;
-
-  h1 {
-    font-family: poppins, sans-serif;
-    font-size: 2em;
-    font-weight: 700;
-  }
-
-  h2 {
-    color: white;
-    text-decoration: none;
-  }
+  overflow: auto;
 
   main {
     width: 90%;
-    display: grid;
-    gap: .5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-top: 5rem;
+
+    h1 {
+      font-family: sans-serif;
+      font-size: 1.5em;
+      margin-top: .75em;
+      margin: .5em;
+    }
+  
+    h2 {
+      font-size: large;
+      color: white;
+      text-decoration: none;
+    }
+  
+    h4 {
+      font-size: medium;
+      font-weight: 300;
+    }
   }
 
   section {
-    display: grid;
+    display: flex;
   }
 
   .quiz-container {
@@ -35,7 +44,8 @@ body {
     align-content: center;
     align-items: center;
     padding: .5em;
-    grid-template-columns: repeat(2, 60%);
+    overflow: auto;
+    margin: .5rem;
     
     a { 
       color: white}
@@ -44,5 +54,13 @@ body {
       padding-left: .25em;
       padding-right: .25em;
     }
+
+    h4 {
+      margin-top: .15em;
+    }
   }
+}
+
+.blur {
+  filter: blur(1.5em);
 }

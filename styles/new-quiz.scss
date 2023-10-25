@@ -1,4 +1,28 @@
 .new-quiz, .new-question {
+  padding-top: 20%;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  gap: 1em;
+}
+
+textarea {
+  border-radius: 5px;
+  border-width: .1em;
+  padding: .5em;
+  overflow: auto;
+}
+
+button {
+  background-color: #503b9b;
+  border-radius: 20px;
+  border-style: none;
+  padding: .75em;
+  color: white;
+}
+
+#questions {
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
 }

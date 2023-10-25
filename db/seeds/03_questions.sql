@@ -1,6 +1,6 @@
 INSERT INTO questions (quiz_id, question, answer, option_1, option_2, option_3)
 VALUES 
-(1, 'Everyone is a fan of CSS and noone ever needs to use SASS.', 'true', 'false', '0',''),
+(1, 'Everyone is a fan of CSS and noone ever needs to use SASS.', 'true', 'false', '',''),
 (1, 'What do you use to denote a class', '.', '#', '?', '!'),
 (1, 'What can you use to adjust the css to the screen size', 'Media queries', 'Screen queries', 'Why would I want smartphone users to have fun', 'Tablet adjuster'),
 

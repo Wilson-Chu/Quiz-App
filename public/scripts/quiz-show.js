@@ -12,17 +12,17 @@ $(document).ready(function() {
 
     <div id="answers">
     
-    <label> <input type="radio" name="answer" id="a" value="${data.answer}"/>${data.answer} </label>
-    <label> <input type="radio" name="answer" id="b" value="${data.option_1}"/>${data.option_1} </label>
+    <label> <input type="radio" name="answer" id="a" value="${data.answer}"/> ${data.answer} </label>
+    <label> <input type="radio" name="answer" id="b" value="${data.option_1}"/> ${data.option_1} </label>
     `;
 
     //check if option 2 & 3 have beeen created
     if (data.option_2) {
-      layout += `    <label> <input type="radio" name="answer" id="c" value="${data.option_2}"/>${data.option_2} </label>
+      layout += `    <label> <input type="radio" name="answer" id="c" value="${data.option_2}"/> ${data.option_2} </label>
       `;
     }
     if (data.option_3) {
-      layout += `    <label> <input type="radio" name="answer" id="d" value="${data.option_3}"/>${data.option_3} </label>
+      layout += `    <label> <input type="radio" name="answer" id="d" value="${data.option_3}"/> ${data.option_3} </label>
       `;
     }
 
