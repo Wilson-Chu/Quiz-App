@@ -64,13 +64,12 @@ $(document).ready(function() {
           $('#quiz-container').append(createQuestionElement(quizData[n]));
         }
         if (n === quizData.length){
-          $('#quiz-container').append(
+          $('main').empty()
+          $('main').append(
 
             `<form method="post" action="/results">   <input type="submit"  value="Submit">
             <input type="hidden" name="score" value="${correctAnswers}" />
             <input type="hidden" name="urlID" value="${id}" />
-
-            Get Results
             
             `);
         }
