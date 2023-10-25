@@ -63,9 +63,8 @@ $(document).ready(function() {
         if (n < quizData.length) {
           $('#quiz-container').append(createQuestionElement(quizData[n]));
         }
-        else {
-          $('#quiz-container').empty();
-          $('.btn').replaceWith(
+        if (n === quizData.length){
+          $('#quiz-container').append(
 
             `<form method="post" action="/results">   <input type="submit"  value="Submit">
             <input type="hidden" name="score" value="${correctAnswers}" />
@@ -75,6 +74,18 @@ $(document).ready(function() {
             
             `);
         }
+        // else {
+        //   $('#quiz-container').empty();
+        //   $('.btn').replaceWith(
+
+        //     `<form method="post" action="/results">   <input type="submit"  value="Submit">
+        //     <input type="hidden" name="score" value="${correctAnswers}" />
+        //     <input type="hidden" name="urlID" value="${id}" />
+
+        //     Get Results
+            
+        //     `);
+        // }
       });
 
   });
