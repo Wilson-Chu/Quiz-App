@@ -3,15 +3,14 @@ $(document).ready(function() {
   // Client facing scripts here
 
   const createQuizElement = (quizData) => {
-
     const layout = `
-      <a href='http://localhost:8080/quizzes/${quizData.url_id}'>
-        <div class="quiz-container">
+    <div class="quiz-container">
+    <a href='http://localhost:8080/quizzes/${quizData.url_id}'>
           <h2>${quizData.title}</h2>
+          </a>
           <h4>${quizData.description}<h4>
         <div>
-      </a>
-      <button type="submit" class="btn"> Share Quiz! </button>
+      <button type="submit" class="btn" id="${quizData.url_id}"> Share Quiz! </button>
     `;
     return layout;
   };
@@ -25,15 +24,13 @@ $(document).ready(function() {
       $('main').append(quizElement);
     });
   };
-
-
   $.get('/api/quizzes', (data) => {
     console.log(data);
     $('section').empty();
     renderQuizzes(data);
     $('.btn').on('click',function() {
-      $('.btn').closest('button').replaceWith(`<h4> Here</h4>`)
+      const id = $(this).attr('id') 
+      $(this).replaceWith(`<a href='http://localhost:8080/quizzes/${id}' <p> http://localhost:8080/quizzes/${id}  </p></a>`)
     })
   });
-
 });
