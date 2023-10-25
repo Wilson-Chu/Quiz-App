@@ -5,10 +5,12 @@ $(document).ready(function () {
   const createQuizElement = (quizData) => {
 
     const layout = `
-    <a href='http://localhost:8080/quizzes/${quizData.id}'>
-      <h2>${quizData.title}</h2>
-      <h4>${quizData.description}<h4>
-    </a>
+      <a href='http://localhost:8080/quizzes/${quizData.id}'>
+        <div class="quiz-container">
+          <h2>${quizData.title}</h2>
+          <h4>${quizData.description}<h4>
+        <div>
+      </a>
     `;
 
     return layout;
@@ -25,8 +27,8 @@ $(document).ready(function () {
   };
 
   $.get('/api/quizzes', (data) => {
-    console.log(data)
-    $('main').empty();
+    console.log(data);
+    $('section').empty();
     renderQuizzes(data);
   });
 

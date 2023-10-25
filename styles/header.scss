@@ -2,8 +2,20 @@ header {
   display: flex;
   position: fixed;
   top: 0;
-  
-  .navbar-toggler {
-      display: none;
+  background-color: #503B9B;
+  width: 100%;
+  height: 5rem;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+    color: white;
+    font-family: 'Mansalva', sans-serif;
+    font-size: xx-large;
+    margin-left: 1em;
+
+    i {
+      margin-right: 1em;
     }
+  }
 }
