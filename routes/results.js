@@ -1,14 +1,20 @@
 const express = require('express');
 const router = express.Router();
 const dbInsert = require('../db/insert/new-result');
+const dbUser = require('../db/queries/login');
+
 const dbQuery = require('../db/queries/quizzes');
 
 
 router.get('/', (req, res) => {
-  res.render('results');
+  const templateVars = { user: dbUser.getUserWithId(req.session.userId) };
+  
+  res.render('results',templateVars);
 });
 router.get('/:id', (req, res) => {
-  res.render('results_id');
+  const templateVars = { user: dbUser.getUserWithId(req.session.userId) };
+
+  res.render('results_id',templateVars);
 });
 router.post('/', (req, res) => {
 
