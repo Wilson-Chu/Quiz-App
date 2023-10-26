@@ -21,7 +21,7 @@ $(document).ready(function() {
       const quizElement = createQuizElement(quiz);
 
       // takes return value and appends it to the quizzes container
-      $('main').append(quizElement);
+      $('section').append(quizElement);
     });
   };
 
@@ -31,7 +31,10 @@ $(document).ready(function() {
     renderQuizzes(data);
     $('.btn').on('click',function() {
       const id = $(this).attr('id') 
-      $(this).replaceWith(`<textarea http://localhost:8080/quizzes/${id}></textarea>`)
+      // $(this).replaceWith(`<textarea http://localhost:8080/quizzes/${id}></textarea>`)
+      navigator.clipboard.writeText(`http://localhost:8080/quizzes/${id}`)
+      alert('Link copied to clipboard!')
+
     })
   });
 });
