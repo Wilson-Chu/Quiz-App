@@ -14,7 +14,7 @@ const getResultsByUser = (id) => {
 
 const getResultsByID = (id) => {
   return db.query(`
-  SELECT result, quizzes.title
+  SELECT result, quizzes.title, quizzes.url_id
   FROM results
   JOIN quizzes ON  quizzes.id = quiz_id
   WHERE results.id = ${id}`)

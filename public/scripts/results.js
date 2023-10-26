@@ -9,13 +9,13 @@ $(document).ready(function() {
       <h2>${results.title}: ${results.result}</h2>
       </div>
       </section>
-      <button type="submit" class="btn" id="${results.id}"><i class="fa-solid fa-share"></i> Share Quiz! </button>
+      <button type="submit" class="btn" id="${results.id}"><i class="fa-solid fa-share"></i> Share Your Results! </button>
       `);
       // <button type="submit" class="btn" id="${results.id}"> Share Quiz! </button>
     }
     $('.btn').on('click', function() {
       const id = $(this).attr('id');
-      navigator.clipboard.writeText(`http://localhost:8080/quizzes/${id}`)
+      navigator.clipboard.writeText(`http://localhost:8080/results/${id}`)
       alert('Link copied to clipboard!')
       // $(this).replaceWith(`<a href='http://localhost:8080/quizzes/${id}' <p> http://localhost:8080/quizzes/${id}  </p></a>`);
     });
