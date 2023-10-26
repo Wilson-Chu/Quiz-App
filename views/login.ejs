@@ -51,6 +51,7 @@
     <%- include('./partials/_header') -%>
     <main>
     <div class="container">
+      <section class="row justify-content-center mt-5">
           <div class="col-md-6">
               <h1 class="text-center">Login</h1>
               <form method="POST" action="/login" >
@@ -66,7 +67,12 @@
 
                   <button type="submit" class="btn btn-primary">Login</button>
                 </form>
-            </div>
+                <br>
+                   <div class="text-center">
+                    <h5>Don't have an account? <a href="/register"><strong>Create one today!</strong></a></h5>
+                  </div>
+           </div>
+       </section>
     </div>
   </main>
   </body>
