@@ -11,7 +11,6 @@ router.get('/', (req, res) => {
   // pass templateVars along with 'quiz-show' to get _nav.ejs working ???
   res.render('quiz-show', templateVars);
 });
-
 router.get('/:id', (req, res) => {
   const templateVars = { user: dbUser.getUserWithId(req.session.userId) };
 

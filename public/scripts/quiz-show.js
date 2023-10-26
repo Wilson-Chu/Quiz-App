@@ -3,6 +3,7 @@ $(document).ready(function() {
   const id = window.location.pathname.replace('/quizzes/', '');
 
   const createQuestionElement = (data) => {
+    console.log(data + 'this one here')
 
 
     let layout = `

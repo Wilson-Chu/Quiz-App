@@ -22,12 +22,12 @@ router.post('/', (req, res) => {
   data.userId = req.session.userId
   data.urlID = generateRandomString(7);
 
-  console.log(data.urlID + "THIS")
 
   db
     .createQuiz(data)
     .then((data) => {
-      id = data[0].id
+      id = data[0].url_id
+      console.log(id)
       return id;
     })
     .then((id) => res.redirect(`/edit/${id}`));
