@@ -25,6 +25,7 @@ $(document).ready(function() {
   };
 
   $.get('/api/quizzes/byid', (data) => {
+    $('section').append("you made it inside /byid!"); // testing...
     console.log(data);
     $('section').empty();
     renderQuizzes(data);

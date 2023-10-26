@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/byid', (req, res) => { // quiz public if user knows id (shareable)
-  const templateVars = { user: db.getUserWithId(req.session.userId) };
+  const templateVars = { user: db.getQuizByUserId(req.session.userId) };
   console.log('PASSING THROUGH');
   // res.render('quiz-show', templateVars);
   db.getQuizByUserId(req.session.userId)
