@@ -24,7 +24,7 @@ $(document).ready(function() {
     });
   };
 
-  $.get(db.getQuizByUserId(req.session.id), (data) => {
+  $.get('/api/quiz-by-id', (data) => {
     console.log(data);
     $('section').empty();
     renderQuizzes(data);
