@@ -17,10 +17,14 @@ router.get('/', (req, res) => {
 });
 router.get('/:id', (req, res) => {
   const id = req.params.id;
+  const userID = req.session.userId;
+  console.log(userID + "userid in here")
   db.getResultsByID(id)
     .then(result => {
       const resultData = result;
-      res.json(resultData);
+      resultData.userID = userID;
+      console.log(JSON.stringify(userID) + 'in router')
+      res.json([resultData,userID]);
     })
     .catch(err => {
       res
