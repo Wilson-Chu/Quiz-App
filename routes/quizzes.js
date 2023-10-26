@@ -16,10 +16,10 @@ router.get('/', requireAuth, (req, res) => { // protected route
   res.render('my-quizzes', templateVars);
 });
 
-router.get('/:id', (req, res) => { // quiz public if user knows id (shareable)
-  const templateVars = { user: dbUser.getUserWithId(req.session.userId) };
+// router.get('/:id', (req, res) => { // quiz public if user knows id (shareable)
+//   const templateVars = { user: dbUser.getUserWithId(req.session.userId) };
 
-  res.render('quiz-show', templateVars);
-});
+//   res.render('quiz-show', templateVars);
+// });
 
 module.exports = router;
