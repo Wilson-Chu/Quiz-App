@@ -12,6 +12,7 @@ router.get('/:id', (req, res) => {
     .then(quizID => {
       dbQuery.getQuizById(quizID)
       .then(response => {
+        console.log(JSON.stringify(response) + 'here plssss');
 
         res.json(response)
       })

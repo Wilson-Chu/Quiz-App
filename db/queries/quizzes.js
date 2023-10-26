@@ -12,10 +12,11 @@ const getAllPublicQuizzes = () => {
 };
 
 const getQuizByUrlID = (urlID) => {
+  console.log(urlID + 'We in here')
   return db.query(`
-  SELECT id
+  SELECT title, description, id, url_id
   FROM quizzes
-  WHERE url_id = $1
+  WHERE url_id = '$1'
   `, [urlID])
     .then(data => {
       return data.rows;

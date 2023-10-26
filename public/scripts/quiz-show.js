@@ -2,7 +2,7 @@ $(document).ready(function() {
 
   let url = window.location.pathname
   let id = url.split('/').pop()
-  console.log(url + 'this one here')
+  console.log(id + 'this one here')
 
   const createQuestionElement = (data) => {
 
