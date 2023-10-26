@@ -46,6 +46,7 @@ $(document).ready(function() {
   });
 
   $.get(`/api/quiz-by-id/${id}`, function(data) {
+    console.log(data)
     let n = 0;
     let correctAnswers = 0;
     const quizData = data;
