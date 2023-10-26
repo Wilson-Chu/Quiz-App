@@ -38,9 +38,7 @@ app.use(cookieSession({
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
-const userApiRoutes = require('./routes/users-api');
-const widgetApiRoutes = require('./routes/widgets-api');
-const usersRoutes = require('./routes/users');
+
 const loginRoutes = require('./routes/login');
 const logoutRoutes = require('./routes/logout');
 
@@ -52,7 +50,7 @@ const quizbyIdApiRoutes = require('./routes/quiz-by-id-api');
 const resultsApiRoutes = require('./routes/results-api');
 
 
-const newQuiz = require('./routes/new-quiz.js');
+// const newQuiz = require('./routes/new-quiz.js');
 const newQuestion = require('./routes/new-question.js');
 // const showQuiz = require('./routes/quiz-show.js');
 const quizzesRoutes = require('./routes/quizzes');
@@ -63,15 +61,14 @@ const { requireAuth } = require('./public/scripts/isAuthenticated');
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
-app.use('/api/users', userApiRoutes);
-app.use('/api/widgets', widgetApiRoutes);
+
+
 app.use('/api/quizzes', quizzesApiRoutes);
 app.use('/api/results', resultsApiRoutes);
 app.use('/api/quiz-by-id', quizbyIdApiRoutes);
-app.use('/users', usersRoutes);
-app.use('/new-quiz', newQuiz);
+// app.use('/new-quiz', newQuiz);
 app.use('/new-question', newQuestion);
-app.use('/new', newQuiz);
+// app.use('/new', newQuiz);
 app.use('/edit', newQuestion);
 app.use('/quizzes', quizzesRoutes);
 app.use('/api/results', resultsApiRoutes);
@@ -91,9 +88,7 @@ app.get('/', requireAuth, (req, res) => { // protected route
   res.render('index', templateVars);
 });
 
-// app.get('/quizzes', (req, res) => {
-//   res.render('index');
-// });
+
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
