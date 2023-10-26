@@ -22,4 +22,15 @@ router.get('/:id', (req, res) => { // quiz public if user knows id (shareable)
   res.render('quiz-show', templateVars);
 });
 
+// router.get('/byid', (req, res) => { // quiz public if user knows id (shareable)
+//   const templateVars = { user: dbUser.getUserWithId(req.session.userId) };
+//   console.log('PASSING THROUGH')
+//   // res.render('quiz-show', templateVars);
+//   db.getQuizByUserId(req.session.userId)
+//     .then(result => {
+//       console.log(result);
+//       res.json(result);
+//     });
+// });
+
 module.exports = router;
