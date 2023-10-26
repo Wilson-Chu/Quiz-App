@@ -12,7 +12,7 @@ const { requireAuth } = require('../public/scripts/isAuthenticated');
 
 router.get('/', requireAuth, (req, res) => { // general page protected
   const templateVars = { user: dbUser.getUserWithId(req.session.userId) };
-
+  console.log("ID:", req.session.userId);
   res.render('results', templateVars);
 });
 router.get('/:id', (req, res) => { // will have randomized id to access shareable links between friends
@@ -23,12 +23,9 @@ router.get('/:id', (req, res) => { // will have randomized id to access shareabl
 router.post('/', (req, res) => {
 
   const urlID = req.body.urlID;
-  console.log('before' + typeof req.body.urlID);
-  console.log('After' + typeof urlID);
-
   let quizID = null;
   const score = req.body.score;
-  const contestant_id = req.session.id || 3;
+  const contestant_id = req.session.userId;
 
 
   dbQuery.getQuizByUrlID(urlID)
