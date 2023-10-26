@@ -24,4 +24,17 @@ const getQuizByUrlID = (urlID) => {
     .catch(err => { console.log(err.message); });
 };
 
-module.exports = { getAllPublicQuizzes, getQuizByUrlID };
+const getQuizByUserId = (ownerId) => {
+
+  return db.query(`
+  SELECT *
+  FROM quizzes
+  WHERE owner_id = $1;
+  `, [ownerId])
+    .then(data => {
+      return data.rows;
+    })
+    .catch(err => { console.log(err.message); });
+};
+
+module.exports = { getAllPublicQuizzes, getQuizByUrlID, getQuizByUserId };
