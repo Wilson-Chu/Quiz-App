@@ -79,22 +79,21 @@ $(document).ready(function() {
     return layout;
   };
 
-  // const renderQuiz = ((quiz) => {
-
-  //   if (!quiz[0]) {
-  //     $('main').append(`<h2>The creator hasn't added questions yet!🥲</h2>`);
-  //     return;
-  //   }
-
-  //   quiz.forEach((q) => {
-
-  //     const quizElement = createQuestionElement(q);
-
-  //     $('#quiz-container').append(quizElement);
-  //   });
-  // });
 
   $.get(`/api/quiz-by-id/${id}`, function(data) {
+    
+    if (!data[0]) {
+      $('button').remove();
+      $('#quiz-container').append(`
+        <h2>The creator hasn't added questions yet!🥲</h2>
+        <a href= '/'>
+          <button type="button" class="btn">
+          <i class="fa-solid fa-arrow-left"></i> <strong>Back</strong>
+        </button>
+        </a>
+  `);
+    }
+
     console.log(data)
     let n = 0;
     let correctAnswers = 0;

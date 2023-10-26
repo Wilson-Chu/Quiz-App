@@ -9,9 +9,9 @@ $(() => {
     data.private = $("#private").val();
 
     console.log(data.title);
-    
+
     $.post('/quizzes/new', data);
 
-    });
-    
   });
+
+});
