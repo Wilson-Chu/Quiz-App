@@ -55,12 +55,24 @@ body {
     padding-top: 1em;
   }
 
-  .quiz-container {
+  .result-display {
+    display: flex;
+    flex-direction: column;
     background-color: #7E52B7;
     border-radius: 25px;
     justify-content: center;
     align-content: center;
     align-items: center;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    padding: .5em;
+    overflow: auto;
+    color: white;
+  }
+
+  .quiz-container {
+    background-color: #7E52B7;
+    border-radius: 25px;
     margin-top: .5em;
     margin-bottom: .5em;
     padding: .5em;

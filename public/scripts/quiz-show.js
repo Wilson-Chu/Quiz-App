@@ -70,13 +70,15 @@ $(document).ready(function() {
         }
         if (n === quizData.length) {
           $('main').empty();
-          $('main').append(
-
-            `<form method="post" action="/results">   <input type="submit"  value="Submit">
+          $('main').append(`
+            <div class="result-display">
+            <h2>You made it - nice work!</h2>
+            <form method="post" action="/results">   
             <input type="hidden" name="score" value="${correctAnswers}/${quizData.length}" />
             <input type="hidden" name="urlID" value="${id}" />
-            
-            `);
+            <button type="submit"  value="Submit">Get My Results!</button>
+            </div>
+          `);
         }
         // else {
         //   $('#quiz-container').empty();
