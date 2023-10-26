@@ -7,7 +7,7 @@ $(document).ready(function () {
     $('main').append(`
     <section>
     <div class='quiz-container'>
-    <h2>Your results for this quiz:</h2>
+    <h2>${results[0].username}'s for this quiz:</h2>
     <h2>${results[0].title}: ${results[0].result}</h2>
     </div>
     <button type="submit" class="btn share-result" id="${id}"><i class="fa-solid fa-share"></i> Share Your Results! </button>

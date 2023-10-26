@@ -1,7 +1,7 @@
 const db = require('../connection');
 
 const getResultsByUser = (id) => {
-  console.log(id, 'USER ID')
+  console.log(id, 'USER ID');
 
   return db.query(`
   SELECT result, quizzes.title, results.id, results.date_created
@@ -9,9 +9,8 @@ const getResultsByUser = (id) => {
   JOIN quizzes ON  quizzes.id = quiz_id
   WHERE contestant_id = $1
   ORDER BY date_created DESC`
-  , [id])
-  .then(data => {
-      console.log(data.rows, 'DATA.ROWS')
+    , [id])
+    .then(data => {
       return data.rows;
     })
     .catch(err => { console.log(err.message); });
@@ -19,9 +18,10 @@ const getResultsByUser = (id) => {
 
 const getResultsByID = (id) => {
   return db.query(`
-  SELECT result, quizzes.title, quizzes.url_id
+  SELECT result, quizzes.title, quizzes.url_id, username
   FROM results
   JOIN quizzes ON  quizzes.id = quiz_id
+  JOIN users ON  users.id = contestant_id
   WHERE results.id = $1`, [id])
     .then(data => {
       return data.rows;
