@@ -11,9 +11,10 @@ router.post('/:id', (req, res) => {
   const id = req.params.id;
   let data = req.body
   data.quizId = id
+  console.log('HERE', id);
 
   db
-    .addQuestions(data)
+    .addQuestions(data.quizId)
     .then(res.redirect(`/edit/${id}`));
 
 });

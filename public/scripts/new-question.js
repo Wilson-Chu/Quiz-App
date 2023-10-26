@@ -24,6 +24,7 @@ $(() => {
   //   console.log($('.delete-question').parent());
   //   $('#delete-question').closest('#new-question').remove()
   // });
+  id = window.location.pathname.replace('/edit/', '')
 
   $("form").on("submit", (evt) => {
 
@@ -35,8 +36,6 @@ $(() => {
     data.option2 = $("#option-2").val();
     data.option3 = $("#option-3").val();
 
-    id = window.location.pathname.replace('/new/', '')
-
     console.log('logging', id)
     
     $.post(`/edit/${data.id}`, { id })
@@ -44,8 +43,6 @@ $(() => {
   });
 
   $("#done").on("click", (evt) => {
-
-    const id = window.location.pathname.replace('/edit/', '')
 
     console.log(id)
     

@@ -27,7 +27,8 @@ router.post('/', (req, res) => {
   db
     .createQuiz(data)
     .then((data) => {
-      id = data[0].id
+      console.log(data)
+      id = data[0].url_id
       return id;
     })
     .then((id) => res.redirect(`/edit/${id}`));
