@@ -8,8 +8,9 @@ const { requireAuth } = require('../public/scripts/isAuthenticated');
 // router.use(requireAuth); // protected router
 
 router.get('/', requireAuth, (req, res) => { // protected route
-  console.log("abdoosd");
+  console.log("abdoosd", req.session.userId);
   const templateVars = { user: dbUser.getUserWithId(req.session.userId) };
+
 
   // pass templateVars along with 'quiz-show' to get _nav.ejs working
   res.render('index', templateVars);

@@ -1,12 +1,15 @@
 const db = require('../connection');
 
 const getResultsByUser = (id) => {
+  console.log(id, 'USER ID')
+
   return db.query(`
   SELECT result, quizzes.title, results.id
   FROM results
   JOIN quizzes ON  quizzes.id = quiz_id
-  WHERE contestant_id = ${id}`)
-    .then(data => {
+  WHERE contestant_id = $1`, [id])
+  .then(data => {
+      console.log(data.rows, 'DATA.ROWS')
       return data.rows;
     })
     .catch(err => { console.log(err.message); });
