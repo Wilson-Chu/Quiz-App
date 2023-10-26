@@ -17,12 +17,12 @@ const bcrypt = require("bcryptjs");
 //   res.render('login', templateVars);
 // });
 
-router.get('/', async (req, res) => {
-  const user = await db.getUserWithId(req.session.userId);
+router.get('/', (req, res) => {
+  const user = db.getUserWithId(req.session.userId);
   const templateVars = { user: user };
 
   if (req.session.userId) {
-    return res.redirect("/quizzes");
+    return res.redirect("/");
   }
 
   console.log("templateVars data: ", templateVars);
@@ -32,9 +32,9 @@ router.get('/', async (req, res) => {
 router.post('/', (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
-  console.log(email);
+
   db.getUserWithEmail(email).then((user) => {
-    console.log(user);
+
     if (!user) {
       return res.send({ error: "no user with that id" });
     }
@@ -44,7 +44,7 @@ router.post('/', (req, res) => {
     }
 
     req.session.userId = user.id;
-    res.redirect('/quizzes');
+    res.redirect('/'); // to public homepage
   });
 });
 
