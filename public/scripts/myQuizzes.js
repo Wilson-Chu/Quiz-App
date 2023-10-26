@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  const db = require('../../db/queries/quizzes');
+  // const db = require('../../db/queries/quizzes');
 
   const createQuizElement = (quizData) => {
     const layout = `
@@ -24,7 +24,8 @@ $(document).ready(function() {
     });
   };
 
-  $.get('/api/quiz-by-id', (data) => {
+  $.get('/api/quizzes/byid', (data) => {
+    $('section').append("you made it inside /byid!"); // testing...
     console.log(data);
     $('section').empty();
     renderQuizzes(data);
