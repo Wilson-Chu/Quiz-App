@@ -23,7 +23,8 @@ router.post('/', (req, res) => {
 
   const data = req.body
   data.userId = req.session.userId
-  data.urlID = generateRandomString(7);
+  
+  data.urlID = generateRandomString(7)
 
 
   db
