@@ -21,13 +21,14 @@ $(document).ready(function() {
   }
 
   const createQuestionElement = (data) => {
-    console.log(data);
 
+    //creates the html for each option
     const a = `<label> <input type="radio" name="answer" id="a" value="${data.answer}"/> ${data.answer} </label>`;
     const q1 = `<label> <input type="radio" name="answer" id="b" value="${data.option_1}"/> ${data.option_1} </label>`;
   
     qArr = [a, q1];
-  
+    
+    //checks to see if option 2 and 3 exist as they can be null values
     if (data.option_2){
       const q2 = `<label> <input type="radio" name="answer" id="a" value="${data.option_2}"/> ${data.option_2} </label>`;
       qArr.push(q2);
@@ -38,14 +39,14 @@ $(document).ready(function() {
       qArr.push(q3);
     }
   
-    console.log('QARR', qArr);
+    //shuffles the array
     const shuffledArr = shuffle(qArr);
 
+    //builds the layout
     let layout = `
     <h2>${data.question}</h2>
     <div id="answers">
     `
-
     shuffledArr.forEach (each => {
       layout += each
     })
