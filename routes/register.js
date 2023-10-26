@@ -18,23 +18,22 @@ router.get('/', (req, res) => {
   res.render("register", templateVars);
 });
 
-router.post('/', (req, res) => {
+router.post('/', async(req, res) => {
   const { username, email, password } = req.body;
 
   if (!username || !email || !password) {
     return res.status(400).send('Invalid information - please provide email or password');
   }
 
-  // from DB query
-  if (dbLogin.getUserWithEmail(email)) {
+  const lowercaseEmail = email.toLowerCase();
+
+  const existingUser = await dbLogin.getUserWithEmail(lowercaseEmail);
+  if (existingUser) {
     return res.status(400).send("Email already taken. Please try another one.");
   }
 
-  // ADD NEW USER AND INFO TO PSQL DATABASE
-  dbNewUser.createNewUser({ username: username, email: email, password: bcrypt.hashSync(password, 10) });
-
-  // retrieving the userId of new user (from DB query)
-  // req.session.userId = dbLogin.getUserWithEmail(email).id;
+  // // ADD NEW USER AND INFO TO PSQL DATABASE
+  await dbNewUser.createNewUser({ username, email: lowercaseEmail, password: bcrypt.hashSync(password, 10) });
 
   res.redirect("/login"); // back to login
 });
