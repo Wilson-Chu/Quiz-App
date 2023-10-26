@@ -28,13 +28,13 @@ $(() => {
 
   $("form").on("submit", (evt) => {
 
-    const data = { test: 'test text'};
+    const data = {};
 
-    data.question = $("#question").val();
-    data.answer = $("#answer").val();
-    data.option1 = $("#option-1").val();
-    data.option2 = $("#option-2").val();
-    data.option3 = $("#option-3").val();
+    data.question = $("#question").text();
+    data.answer = $("#answer").text();
+    data.option1 = $("#option-1").text();
+    data.option2 = $("#option-2").text();
+    data.option3 = $("#option-3").text();
 
     console.log('logging', id)
     
