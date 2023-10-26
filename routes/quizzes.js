@@ -13,7 +13,7 @@ router.get('/', requireAuth, (req, res) => { // protected route
 
 
   // pass templateVars along with 'quiz-show' to get _nav.ejs working
-  res.render('index', templateVars);
+  res.render('my-quizzes', templateVars);
 });
 
 router.get('/:id', (req, res) => { // quiz public if user knows id (shareable)
