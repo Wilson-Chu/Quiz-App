@@ -31,7 +31,7 @@
   <%- include('./partials/_header') -%>
     <%- include('./partials/_nav') -%>
       <main>
-        <form id="questions" action="/edit/<%= quizId %>" method="POST">
+        <form id="questions" action="/quizzes/edit/<%= quizId %>" method="POST">
           <h1>Add a question!</h1>
           <div class="question-container"></div>
           <textarea id="question" name="question" placeholder="Question"></textarea>

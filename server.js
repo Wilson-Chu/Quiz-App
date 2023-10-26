@@ -41,18 +41,11 @@ app.use(cookieSession({
 
 const loginRoutes = require('./routes/login');
 const logoutRoutes = require('./routes/logout');
-
 const register = require('./routes/register');
-
-
 const quizzesApiRoutes = require('./routes/quizzes-api');
 const quizbyIdApiRoutes = require('./routes/quiz-by-id-api');
 const resultsApiRoutes = require('./routes/results-api');
-
-
-// const newQuiz = require('./routes/new-quiz.js');
 const newQuestion = require('./routes/new-question.js');
-// const showQuiz = require('./routes/quiz-show.js');
 const quizzesRoutes = require('./routes/quizzes');
 const resultsRoutes = require('./routes/results');
 const { requireAuth } = require('./public/scripts/isAuthenticated');
@@ -66,17 +59,12 @@ const { requireAuth } = require('./public/scripts/isAuthenticated');
 app.use('/api/quizzes', quizzesApiRoutes);
 app.use('/api/results', resultsApiRoutes);
 app.use('/api/quiz-by-id', quizbyIdApiRoutes);
-// app.use('/new-quiz', newQuiz);
-app.use('/new-question', newQuestion);
-// app.use('/new', newQuiz);
-app.use('/edit', newQuestion);
+app.use('/quizzes/edit', newQuestion);
 app.use('/quizzes', quizzesRoutes);
-app.use('/api/results', resultsApiRoutes);
 app.use('/results', resultsRoutes);
 app.use('/register', register);
 app.use('/logout', logoutRoutes);
 app.use('/login', loginRoutes);
-// app.use('/quizData', quizzesRoutes);
 // Note: mount other resources here, using the same pattern above
 
 // Home page

@@ -27,7 +27,7 @@ router.post('/:id', (req, res) => {
       return db.addQuestions(data);
   })
     // .then(returnedData => {console.log(returnedData + "HERE")})
-    .then(res.redirect(`/edit/${id}`));
+    .then(res.redirect(`/quizzes/edit/${id}`));
 
 });
 

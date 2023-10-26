@@ -34,7 +34,7 @@ $(document).ready(function() {
       qArr.push(q2);
     }
   
-    if (data.option_2){
+    if (data.option_3){
       const q3 = `<label> <input type="radio" name="answer" id="a" value="${data.option_3}"/> ${data.option_3} </label>`;
       qArr.push(q3);
     }

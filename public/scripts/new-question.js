@@ -24,7 +24,7 @@ $(() => {
   //   console.log($('.delete-question').parent());
   //   $('#delete-question').closest('#new-question').remove()
   // });
-  id = window.location.pathname.replace('/edit/', '')
+  id = window.location.pathname.split('/').pop()
 
   $("form").on("submit", (evt) => {
 
@@ -38,7 +38,7 @@ $(() => {
 
     console.log('logging', id)
     
-    $.post(`/edit/${data.id}`, { id })
+    $.post(`/quizzes/edit/${data.id}`, { id })
 
   });
 
