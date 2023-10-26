@@ -1,4 +1,11 @@
 $(document).ready(function () {
+  
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   let url = window.location.pathname
   let id = url.split('/').pop()
 
@@ -7,8 +14,8 @@ $(document).ready(function () {
     $('main').append(`
     <section>
     <div class='quiz-container'>
-    <h2>${results[0].username}'s results for this quiz:</h2>
-    <h2>${results[0].title}: ${results[0].result}</h2>
+    <h2>${escape(results[0].username)}'s results for this quiz:</h2>
+    <h2>${escape(results[0].title)}: ${escape(results[0].result)}</h2>
     <button type="submit" class="btn share-result accent-btn" id="${id}"><i class="fa-solid fa-share"></i> Share Your Results! </button>
     <button type="submit" class="btn share-quiz" id="${results[0].url_id}"><i class="fa-solid fa-share"></i> Share This Quiz! </button>
     </div>

@@ -1,5 +1,11 @@
 $(document).ready(function() {
 
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   let url = window.location.pathname;
   let id = url.split('/').pop();
   console.log(id);
@@ -23,19 +29,19 @@ $(document).ready(function() {
   const createQuestionElement = (data) => {
 
     //creates the html for each option
-    const a = `<label> <input type="radio" name="answer" id="a" value="${data.answer}"/> ${data.answer} </label>`;
-    const q1 = `<label> <input type="radio" name="answer" id="b" value="${data.option_1}"/> ${data.option_1} </label>`;
+    const a = `<label> <input type="radio" name="answer" id="a" value="${escape(data.answer)}")/> ${escape(data.answer)}</label>`;
+    const q1 = `<label> <input type="radio" name="answer" id="b" value="${escape(data.option_1)}"/> ${escape(data.option_1)} </label>`;
   
     qArr = [a, q1];
     
     //checks to see if option 2 and 3 exist as they can be null values
     if (data.option_2){
-      const q2 = `<label> <input type="radio" name="answer" id="a" value="${data.option_2}"/> ${data.option_2} </label>`;
+      const q2 = `<label> <input type="radio" name="answer" id="a" value="${escape(data.option_2)}"/> ${escape(data.option_2)} </label>`;
       qArr.push(q2);
     }
   
     if (data.option_3){
-      const q3 = `<label> <input type="radio" name="answer" id="a" value="${data.option_3}"/> ${data.option_3} </label>`;
+      const q3 = `<label> <input type="radio" name="answer" id="a" value="${escape(data.option_3)}"/> ${data.option_3} </label>`;
       qArr.push(q3);
     }
   

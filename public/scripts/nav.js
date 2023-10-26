@@ -6,20 +6,4 @@ $(document).ready(function() {
     $("main").toggleClass("blur");
   }));
 
-  // $.ajax({
-  //   url: '../routes/login.js',
-  //   method: 'GET',
-  //   dataType: 'json',
-  //   success: function(data) {
-  //     const isAuthenticated = data.isAuthenticated;
-  //     // Use the value of isAuthenticated to apply dynamic CSS conditions
-  //     if (isAuthenticated) {
-  //       $('#login-btn').hide();
-  //       $('#register-btn').hide();
-  //     } else {
-  //       $('#logout-btn').hide();
-  //     }
-  //   },
-  // });
-
 });

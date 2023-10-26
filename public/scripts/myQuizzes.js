@@ -1,15 +1,20 @@
 $(document).ready(function() {
-  // const db = require('../../db/queries/quizzes');
 
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+  
   const createQuizElement = (quizData) => {
     const layout = `
     <div class="quiz-container">
-    <a href='http://localhost:8080/quizzes/${quizData.url_id}'>
-          <h2>${quizData.title}</h2>
-          <h4>${quizData.description}<h4>
+    <a href='http://localhost:8080/quizzes/${escape(quizData.url_id)}'>
+          <h2>${escape(quizData.title)}</h2>
+          <h4>${escape(quizData.description)}<h4>
           </a>
         <div>
-      <button type="submit" class="btn" id="${quizData.url_id}"><i class="fa-solid fa-share"></i> Share Quiz! </button>
+      <button type="submit" class="btn" id="${escape(quizData.url_id)}"><i class="fa-solid fa-share"></i> Share Quiz! </button>
     `;
     return layout;
   };

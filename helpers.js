@@ -28,4 +28,6 @@ const authenticateUser = (id, database) => {
   return userID;
 };
 
+
 module.exports = { generateRandomString, getUserByEmail, authenticateUser };
+

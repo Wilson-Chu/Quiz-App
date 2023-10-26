@@ -1,4 +1,11 @@
 $(document).ready(function() {
+
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+  
   $.get('/api/results', (data) => {
     console.log(data);
     for (let results of data) {
@@ -6,7 +13,7 @@ $(document).ready(function() {
       <section>
       <div class='quiz-container'>
       <h2>Your results for this quiz:</h2>
-      <h2>${results.title}: ${results.result}</h2>
+      <h2>${escape(results.title)}: ${escape(results.result)}</h2>
       </div>
       </section>
       <button type="submit" class="btn" id="${results.id}"><i class="fa-solid fa-share"></i> Share Your Results! </button>

@@ -43,8 +43,9 @@ router.get('/:id', (req, res) => {
 });
 
 router.get('/new/:id', (req, res) => {
-  const templateVars = { quizId: req.params.id };
-  console.log(templateVars);
+  // const templateVars = { quizId: req.params.id };
+  // console.log(templateVars);
+  
   res.render('new-question', templateVars);
 });
 
