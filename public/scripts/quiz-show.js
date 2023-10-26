@@ -73,7 +73,7 @@ $(document).ready(function() {
           $('main').append(
 
             `<form method="post" action="/results">   <input type="submit"  value="Submit">
-            <input type="hidden" name="score" value="${correctAnswers}" />
+            <input type="hidden" name="score" value="${correctAnswers}/${quizData.length}" />
             <input type="hidden" name="urlID" value="${id}" />
             
             `);

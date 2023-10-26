@@ -20,5 +20,4 @@ $(document).ready(function() {
       // $(this).replaceWith(`<a href='http://localhost:8080/quizzes/${id}' <p> http://localhost:8080/quizzes/${id}  </p></a>`);
     });
   });
-
 });
