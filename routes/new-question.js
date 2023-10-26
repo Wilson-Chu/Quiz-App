@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../db/insert/add-questions');
+const { requireAuth } = require('../public/scripts/isAuthenticated');
+
+router.use(requireAuth); // protected router
 
 router.get('/:id', (req, res) => {
   const templateVars = { quizId: req.params.id };
