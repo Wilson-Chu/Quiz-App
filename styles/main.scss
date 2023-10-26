@@ -79,6 +79,15 @@ body {
   }
 }
 
+button {
+  background-color: #503b9b;
+  border-radius: 20px;
+  border-style: none;
+  padding: .75em;
+  color: white;
+  margin: .25em;
+}
+
 .blur {
   filter: blur(1.5em);
 }
