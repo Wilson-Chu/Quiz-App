@@ -1,29 +1,20 @@
 const db = require('../connection');
 
 const getQuizById = (id) => {
+  const vars = `'${id}'`
+  console.log(id, 'sooo')
+
   return db.query(`
   SELECT question, answer, option_1, option_2, option_3
   FROM quizzes
   JOIN questions ON quiz_id = quizzes.id
-  WHERE url_id = $1
-  `,
-  [id])
+  WHERE url_id LIKE $1 
+`,["%"+id+"%"])
     .then(data => {
-      return data;
+      console.log(data.rows)
+      return data.rows;
     })
     .catch(err => {console.log(err.message)})
 };
-
-// const getQuestionsByQuizId = (id) => {
-//   return db.query(`
-//   SELECT question, answer, option_1, option_2
-//   FROM questions
-//   WHERE quiz_id = $1`,
-//   [id])
-//     .then(data => {
-//       return data;
-//     })
-//     .catch(err => {console.log(err.message)})
-// };
 
 module.exports = { getQuizById };

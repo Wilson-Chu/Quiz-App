@@ -1,8 +1,12 @@
 $(document).ready(function() {
 
-  const id = window.location.pathname.replace('/quizzes/', '');
+  let url = window.location.pathname;
+  let id = url.split('/').pop();
+  console.log(id);
 
   const createQuestionElement = (data) => {
+    console.log(data);
+
 
 
     let layout = `
@@ -64,8 +68,8 @@ $(document).ready(function() {
         if (n < quizData.length) {
           $('#quiz-container').append(createQuestionElement(quizData[n]));
         }
-        if (n === quizData.length){
-          $('main').empty()
+        if (n === quizData.length) {
+          $('main').empty();
           $('main').append(
 
             `<form method="post" action="/results">   <input type="submit"  value="Submit">
@@ -83,7 +87,7 @@ $(document).ready(function() {
         //     <input type="hidden" name="urlID" value="${id}" />
 
         //     Get Results
-            
+
         //     `);
         // }
       });

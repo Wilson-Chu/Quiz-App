@@ -3,6 +3,9 @@ const router  = express.Router();
 const db = require('../db/insert/create-quiz');
 const dbUser = require('../db/queries/login');
 const {generateRandomString} = require('../helpers');
+const { requireAuth } = require('../public/scripts/isAuthenticated');
+
+router.use(requireAuth); // protected router
 
 
 router.get('/', (req, res) => {
@@ -20,15 +23,15 @@ router.post('/', (req, res) => {
 
   const data = req.body
   data.userId = req.session.userId
-  data.urlID = generateRandomString(7);
+  
+  data.urlID = generateRandomString(7)
 
-  console.log(data.urlID + "THIS")
 
   db
     .createQuiz(data)
     .then((data) => {
-      console.log(data)
       id = data[0].url_id
+      console.log(id)
       return id;
     })
     .then((id) => res.redirect(`/edit/${id}`));
