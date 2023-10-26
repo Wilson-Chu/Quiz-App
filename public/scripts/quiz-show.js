@@ -1,9 +1,10 @@
 $(document).ready(function() {
 
-  const id = window.location.pathname.replace('/quizzes/', '');
+  let url = window.location.pathname
+  let id = url.split('/').pop()
+  console.log(url + 'this one here')
 
   const createQuestionElement = (data) => {
-    console.log(data + 'this one here')
 
 
     let layout = `

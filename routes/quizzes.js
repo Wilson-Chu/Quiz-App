@@ -12,7 +12,7 @@ router.get('/', requireAuth, (req, res) => { // protected route
   const templateVars = { user: dbUser.getUserWithId(req.session.userId) };
 
   // pass templateVars along with 'quiz-show' to get _nav.ejs working
-  res.render('quiz-show', templateVars);
+  res.render('index', templateVars);
 });
 
 router.get('/:id', (req, res) => { // quiz public if user knows id (shareable)
