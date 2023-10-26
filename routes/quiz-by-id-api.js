@@ -9,11 +9,9 @@ router.get('/:id', (req, res) => {
   const id = req.params.id
 
   db.getQuizByUrlID(id)
-    .then(quizID => {
-      dbQuery.getQuizById(quizID)
+    .then((quizID) => {
+      dbQuery.getQuizById(quizID[0].url_id)
       .then(response => {
-        console.log(JSON.stringify(response) + 'here plssss');
-
         res.json(response)
       })
     })
