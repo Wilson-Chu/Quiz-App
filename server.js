@@ -57,6 +57,7 @@ const newQuestion = require('./routes/new-question.js');
 const showQuiz = require('./routes/quiz-show.js');
 const quizzesRoutes = require('./routes/quizzes');
 const resultsRoutes = require('./routes/results');
+const { requireAuth } = require('./public/scripts/isAuthenticated');
 
 
 // Mount all resource routes
@@ -85,8 +86,8 @@ app.use('/login', loginRoutes);
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
-app.get('/', (req, res) => {
-  const templateVars = {user: null};
+app.get('/', requireAuth, (req, res) => { // protected route
+  const templateVars = { user: null };
   res.render('index', templateVars);
 });
 

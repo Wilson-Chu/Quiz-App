@@ -5,16 +5,20 @@ const dbUser = require('../db/queries/login');
 
 const dbQuery = require('../db/queries/quizzes');
 
+const { requireAuth } = require('../public/scripts/isAuthenticated');
 
-router.get('/', (req, res) => {
+// router.use(requireAuth); // protected router
+
+
+router.get('/', requireAuth, (req, res) => { // general page protected
   const templateVars = { user: dbUser.getUserWithId(req.session.userId) };
-  
-  res.render('results',templateVars);
+
+  res.render('results', templateVars);
 });
-router.get('/:id', (req, res) => {
+router.get('/:id', (req, res) => { // will have randomized id to access shareable links between friends
   const templateVars = { user: dbUser.getUserWithId(req.session.userId) };
 
-  res.render('results_id',templateVars);
+  res.render('results_id', templateVars);
 });
 router.post('/', (req, res) => {
 

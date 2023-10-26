@@ -3,6 +3,9 @@ const router  = express.Router();
 const db = require('../db/insert/create-quiz');
 const dbUser = require('../db/queries/login');
 const {generateRandomString} = require('../helpers');
+const { requireAuth } = require('../public/scripts/isAuthenticated');
+
+router.use(requireAuth); // protected router
 
 
 router.get('/', (req, res) => {
