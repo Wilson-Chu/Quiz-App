@@ -54,7 +54,7 @@ const resultsApiRoutes = require('./routes/results-api');
 
 const newQuiz = require('./routes/new-quiz.js');
 const newQuestion = require('./routes/new-question.js');
-const showQuiz = require('./routes/quiz-show.js');
+// const showQuiz = require('./routes/quiz-show.js');
 const quizzesRoutes = require('./routes/quizzes');
 const resultsRoutes = require('./routes/results');
 const { requireAuth } = require('./public/scripts/isAuthenticated');
