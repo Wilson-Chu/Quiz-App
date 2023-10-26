@@ -15,11 +15,18 @@ router.get('/:id', (req, res) => {
 router.post('/:id', (req, res) => {
   const id = req.params.id;
   let data = req.body
-
-
-  db
-    .addQuestions(data)
-    .then(returnedData => {console.log(returnedData + "HERE")})
+  
+  dbQuery
+    .getQuizByUrlID(id)
+    .then(result => {
+      data.id = result[0].id;
+      return (data); 
+    })
+    .then((data) => {
+      console.log('x', data);
+      return db.addQuestions(data);
+  })
+    // .then(returnedData => {console.log(returnedData + "HERE")})
     .then(res.redirect(`/edit/${id}`));
 
 });

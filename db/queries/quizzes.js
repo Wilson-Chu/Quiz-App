@@ -19,7 +19,6 @@ const getQuizByUrlID = (urlID) => {
   WHERE url_id = $1;
   `, [urlID])
     .then(data => {
-
       return data.rows;
     })
     .catch(err => { console.log(err.message); });
