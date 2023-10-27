@@ -1,56 +1,100 @@
 $(document).ready(function() {
 
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   let url = window.location.pathname;
   let id = url.split('/').pop();
   console.log(id);
 
+  const shuffle = function(array) {
+    let currentIndex = array.length;
+    // While there remain elements to shuffle.
+    while (currentIndex > 0) {
+  
+      // Pick a remaining element.
+      const randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+    return array;
+  };
+
   const createQuestionElement = (data) => {
-    console.log(data);
 
-
-
-    let layout = `
+    //creates the html for each option
+    const a = `<label> <input type="radio" name="answer" id="a" value="${escape(data.answer)}")/> ${escape(data.answer)}</label>`;
+    const q1 = `<label> <input type="radio" name="answer" id="b" value="${escape(data.option_1)}"/> ${escape(data.option_1)} </label>`;
+  
+    const qArr = [a, q1];
     
-    
-    <h2>${data.question}</h2>
-
-    <div id="answers">
-    
-    <label> <input type="radio" name="answer" id="a" value="${data.answer}"/> ${data.answer} </label>
-    <label> <input type="radio" name="answer" id="b" value="${data.option_1}"/> ${data.option_1} </label>
-    `;
-
-    //check if option 2 & 3 have beeen created
+    //checks to see if option 2 and 3 exist as they can be null values
     if (data.option_2) {
-      layout += `    <label> <input type="radio" name="answer" id="c" value="${data.option_2}"/> ${data.option_2} </label>
-      `;
+      const q2 = `<label> <input type="radio" name="answer" id="a" value="${escape(data.option_2)}"/> ${escape(data.option_2)} </label>`;
+      qArr.push(q2);
     }
+  
     if (data.option_3) {
-      layout += `    <label> <input type="radio" name="answer" id="d" value="${data.option_3}"/> ${data.option_3} </label>
-      `;
+      const q3 = `<label> <input type="radio" name="answer" id="a" value="${escape(data.option_3)}"/> ${data.option_3} </label>`;
+      qArr.push(q3);
     }
+  
+    //shuffles the array
+    const shuffledArr = shuffle(qArr);
+
+    //builds the layout
+    let layout = `
+    <h2>${data.question}</h2>
+    <div id="answers">
+    `;
+    shuffledArr.forEach(each => {
+      layout += each;
+    });
+
+    // let layout = `
+    // <h2>${data.question}</h2>
+    // <div id="answers">
+    // <label> <input type="radio" name="answer" id="a" value="${data.answer}"/> ${data.answer} </label>
+    // <label> <input type="radio" name="answer" id="b" value="${data.option_1}"/> ${data.option_1} </label>
+    // `;
+
+    // //check if option 2 & 3 have beeen created
+    // if (data.option_2) {
+    //   layout += `    <label> <input type="radio" name="answer" id="c" value="${data.option_2}"/> ${data.option_2} </label>
+    //   `;
+    // }
+
+    // if (data.option_3) {
+    //   layout += `    <label> <input type="radio" name="answer" id="d" value="${data.option_3}"/> ${data.option_3} </label>
+    //   `;
+    // }
 
     layout += `</div>`;
     return layout;
   };
 
-  const renderQuiz = ((quiz) => {
-
-    if (!quiz[0]) {
-      $('main').append(`<h2>The creator hasn't added questions yet!🥲</h2>`);
-      return;
-    }
-
-    quiz.forEach((q) => {
-
-      const quizElement = createQuestionElement(q);
-
-      $('#quiz-container').append(quizElement);
-    });
-  });
 
   $.get(`/api/quiz-by-id/${id}`, function(data) {
-    console.log(data)
+    
+    if (!data[0]) {
+      $('button').remove();
+      $('#quiz-container').append(`
+        <h2>The creator hasn't added questions yet!🥲</h2>
+        <a href= '/'>
+          <button type="button" class="btn">
+          <i class="fa-solid fa-arrow-left"></i> <strong>Back</strong>
+        </button>
+        </a>
+  `);
+    }
+
+    console.log(data);
     let n = 0;
     let correctAnswers = 0;
     const quizData = data;
@@ -70,13 +114,15 @@ $(document).ready(function() {
         }
         if (n === quizData.length) {
           $('main').empty();
-          $('main').append(
-
-            `<form method="post" action="/results">   <input type="submit"  value="Submit">
+          $('main').append(`
+            <div class="result-display">
+            <h2>You made it - nice work!</h2>
+            <form method="post" action="/results">   
             <input type="hidden" name="score" value="${correctAnswers}/${quizData.length}" />
             <input type="hidden" name="urlID" value="${id}" />
-            
-            `);
+            <button type="submit"  value="Submit">Get My Results!</button>
+            </div>
+          `);
         }
         // else {
         //   $('#quiz-container').empty();

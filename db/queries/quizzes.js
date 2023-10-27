@@ -8,7 +8,9 @@ const getAllPublicQuizzes = () => {
     .then(data => {
       return data;
     })
-    .catch(err => { console.log(err.message); });
+    .catch(err => {
+      console.log(err.message);
+    });
 };
 
 const getQuizByUrlID = (urlID) => {
@@ -21,7 +23,9 @@ const getQuizByUrlID = (urlID) => {
     .then(data => {
       return data.rows;
     })
-    .catch(err => { console.log(err.message); });
+    .catch(err => {
+      console.log(err.message);
+    });
 };
 
 const getQuizByUserId = (ownerId) => {
@@ -34,7 +38,28 @@ const getQuizByUserId = (ownerId) => {
     .then(data => {
       return data.rows;
     })
-    .catch(err => { console.log(err.message); });
+    .catch(err => {
+      console.log(err.message);
+    });
 };
 
-module.exports = { getAllPublicQuizzes, getQuizByUrlID, getQuizByUserId };
+const getQuestionsByUrlId = (id) => {
+  
+  return db.query(`
+  SELECT question, answer, option_1, option_2, option_3
+  FROM quizzes
+  JOIN questions ON quiz_id = quizzes.id
+  WHERE url_id LIKE $1 
+`,["%" + id + "%"])
+    .then(data => {
+      console.log(data.rows);
+      return data.rows;
+    })
+    .catch(err => {
+      console.log(err.message);
+    });
+};
+
+
+
+module.exports = { getAllPublicQuizzes, getQuizByUrlID, getQuizByUserId,getQuestionsByUrlId };

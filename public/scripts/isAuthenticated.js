@@ -1,6 +1,3 @@
-const express = require('express');
-const app = express();
-
 const requireAuth = function(req, res, next) {
   if (req.session.userId) { // Only shows to logged in users - not checking for specific users atm!
     return next();

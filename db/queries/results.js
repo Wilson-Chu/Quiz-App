@@ -9,11 +9,13 @@ const getResultsByUser = (id) => {
   JOIN quizzes ON  quizzes.id = quiz_id
   WHERE contestant_id = $1
   ORDER BY date_created DESC`
-    , [id])
+  , [id])
     .then(data => {
       return data.rows;
     })
-    .catch(err => { console.log(err.message); });
+    .catch(err => {
+      console.log(err.message);
+    });
 };
 
 const getResultsByID = (id) => {
@@ -26,7 +28,9 @@ const getResultsByID = (id) => {
     .then(data => {
       return data.rows;
     })
-    .catch(err => { console.log(err.message); });
+    .catch(err => {
+      console.log(err.message);
+    });
 };
 
 module.exports = { getResultsByUser, getResultsByID };

@@ -15,6 +15,7 @@ router.get('/', (req, res) => {
         .json({ error: err.message });
     });
 });
+
 router.get('/:id', (req, res) => {
   const id = req.params.id;
   const userID = req.session.userId;
