@@ -35,11 +35,11 @@ router.post('/', (req, res) => {
 
   db.getUserWithEmail(email).then((user) => {
 
-    if (!user) {
-      return res.send({ error: "no user with that id" });
-    }
+    // if (!user) {
+    //   return res.send({ error: "no user with that id" });
+    // }
 
-    if (!bcrypt.compareSync(password, user.password)) {
+    if (!bcrypt.compareSync(password, user.password) || !user) {
       return res.send({ error: "password invalid" });
     }
 

@@ -36,7 +36,7 @@ $(() => {
     data.option2 = $("#option-2").val();
     data.option3 = $("#option-3").val();
 
-    console.log('logging', id)
+    console.log('logging', question)
     
     $.post(`/edit/${data.id}`, { id })
 
