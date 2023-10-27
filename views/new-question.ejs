@@ -31,12 +31,12 @@
   <%- include('./partials/_header') -%>
     <%- include('./partials/_nav') -%>
       <main>
-        <form id="questions" action="/edit/<%= quizId %>" method="POST">
+        <form id="questions" action="/quizzes/edit/<%= quizId %>" method="POST">
           <h1>Add a question!</h1>
           <div class="question-container"></div>
-          <textarea id="question" name="question" placeholder="Question"></textarea>
-          <textarea id="answer" name="answer" placeholder="Correct Answer"></textarea>
-          <textarea id="option-1" name="option1" placeholder="Option 1"></textarea>
+          <textarea id="question" name="question" placeholder="Question" required></textarea>
+          <textarea id="answer" name="answer" placeholder="Correct Answer" required></textarea>
+          <textarea id="option-1" name="option1" placeholder="Option 1" required></textarea>
           <textarea id="option-2" name="option2" placeholder="Option 2"></textarea>
           <textarea id="option-3" name="option3" placeholder="Option 3"></textarea>
           <!-- <button id="delete-question" type="button">Delete Question</button> -->

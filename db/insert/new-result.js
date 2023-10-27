@@ -13,7 +13,9 @@ const submitResult = (input) => { //writes question
     .then(data => {
       return data.rows;
     })
-    .catch(err => {console.log(err.message)})
+    .catch(err => {
+      console.log(err.message);
+    });
 };
 
 module.exports = { submitResult };

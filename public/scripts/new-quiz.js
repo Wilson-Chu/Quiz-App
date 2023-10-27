@@ -1,4 +1,3 @@
-
 $(() => {
   console.log("We in here");
 
@@ -9,9 +8,10 @@ $(() => {
     data.description = $("#description").val();
     data.private = $("#private").val();
 
+    console.log(data.title);
 
-    $.post('/new/quiz', data);
+    $.post('/quizzes/new', data);
 
-    });
-    
   });
+
+});
