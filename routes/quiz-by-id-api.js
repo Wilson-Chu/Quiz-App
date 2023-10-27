@@ -11,7 +11,7 @@ router.get('/:id', (req, res) => {
     .then((quizID) => {
       
       dbQuery.getQuizById(quizID[0].url_id)
-      .then(response => {
+        .then(response => {
           console.log(response);
           res.json(response);
         });

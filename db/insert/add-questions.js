@@ -5,11 +5,11 @@ const addQuestions = (input) => { //writes question
   let { id, question, answer, option1, option2, option3 } = input;
   console.log('input: ', input);
 
-  if ( option2 === "" ){
+  if (option2 === "") {
     option2 = null;
   }
   
-  if ( option3 === "" ){
+  if (option3 === "") {
     option3 = null;
   }
 
@@ -20,10 +20,12 @@ const addQuestions = (input) => { //writes question
   `,
   [ id, question, answer, option1, option2, option3 ])
     .then(data => {
-      console.log(data.rows)
+      console.log(data.rows);
       return data.rows;
     })
-    .catch(err => {console.log(err.message)})
+    .catch(err => {
+      console.log(err.message);
+    });
 };
 
 module.exports = { addQuestions };

@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -24,7 +24,7 @@ $(document).ready(function() {
         array[randomIndex], array[currentIndex]];
     }
     return array;
-  }
+  };
 
   const createQuestionElement = (data) => {
 
@@ -32,15 +32,15 @@ $(document).ready(function() {
     const a = `<label> <input type="radio" name="answer" id="a" value="${escape(data.answer)}")/> ${escape(data.answer)}</label>`;
     const q1 = `<label> <input type="radio" name="answer" id="b" value="${escape(data.option_1)}"/> ${escape(data.option_1)} </label>`;
   
-    qArr = [a, q1];
+    const qArr = [a, q1];
     
     //checks to see if option 2 and 3 exist as they can be null values
-    if (data.option_2){
+    if (data.option_2) {
       const q2 = `<label> <input type="radio" name="answer" id="a" value="${escape(data.option_2)}"/> ${escape(data.option_2)} </label>`;
       qArr.push(q2);
     }
   
-    if (data.option_3){
+    if (data.option_3) {
       const q3 = `<label> <input type="radio" name="answer" id="a" value="${escape(data.option_3)}"/> ${data.option_3} </label>`;
       qArr.push(q3);
     }
@@ -52,10 +52,10 @@ $(document).ready(function() {
     let layout = `
     <h2>${data.question}</h2>
     <div id="answers">
-    `
-    shuffledArr.forEach (each => {
-      layout += each
-    })
+    `;
+    shuffledArr.forEach(each => {
+      layout += each;
+    });
 
     // let layout = `
     // <h2>${data.question}</h2>
@@ -94,7 +94,7 @@ $(document).ready(function() {
   `);
     }
 
-    console.log(data)
+    console.log(data);
     let n = 0;
     let correctAnswers = 0;
     const quizData = data;

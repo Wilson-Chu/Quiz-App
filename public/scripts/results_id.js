@@ -1,16 +1,16 @@
-$(document).ready(function () {
+$(document).ready(function() {
   
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
-  let url = window.location.pathname
-  let id = url.split('/').pop()
+  let url = window.location.pathname;
+  let id = url.split('/').pop();
 
   $.get(`/api/results/${id}`, (results) => {
-    console.log(results)
+    console.log(results);
     $('main').append(`
     <section>
     <div class='quiz-container'>
@@ -21,19 +21,19 @@ $(document).ready(function () {
     </div>
     </section>`);
 
-      $('.share-result').on('click', function() {
-        const link = $(this).attr('id');
-        console.log(link);
-        navigator.clipboard.writeText(`http://localhost:8080/results/${link}`)
-        alert('Link copied to clipboard!')
-      })
+    $('.share-result').on('click', function() {
+      const link = $(this).attr('id');
+      console.log(link);
+      navigator.clipboard.writeText(`http://localhost:8080/results/${link}`);
+      alert('Link copied to clipboard!');
+    });
 
-      $('.share-quiz').on('click', function() {
-        const link = $(this).attr('id');
-        console.log(link);
-        navigator.clipboard.writeText(`http://localhost:8080/quizzes/${link}`)
-        alert('Link copied to clipboard!')
-      })
+    $('.share-quiz').on('click', function() {
+      const link = $(this).attr('id');
+      console.log(link);
+      navigator.clipboard.writeText(`http://localhost:8080/quizzes/${link}`);
+      alert('Link copied to clipboard!');
+    });
 
   });
 

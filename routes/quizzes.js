@@ -29,7 +29,7 @@ router.get('/:id', (req, res) => {
     .then((quizID) => {
 
       db.getQuestionsByUrlId(quizID[0].url_id)
-      .then(data => {
+        .then(data => {
           console.log(data.rows);
           res.render('quiz-show', data.rows);
         });

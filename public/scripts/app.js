@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -38,11 +38,11 @@ $(document).ready(function() {
     $('section').empty();
     renderQuizzes(data);
     $('.btn').on('click',function() {
-      const id = $(this).attr('id') 
+      const id = $(this).attr('id');
       // $(this).replaceWith(`<textarea http://localhost:8080/quizzes/${id}></textarea>`)
-      navigator.clipboard.writeText(`http://localhost:8080/quizzes/${(id)}`)
-      alert('Link copied to clipboard!')
+      navigator.clipboard.writeText(`http://localhost:8080/quizzes/${(id)}`);
+      alert('Link copied to clipboard!');
 
-    })
+    });
   });
 });

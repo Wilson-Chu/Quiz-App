@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -18,13 +18,13 @@ $(document).ready(function() {
       </section>
       <button type="submit" class="btn" id="${results.id}"><i class="fa-solid fa-share"></i> Share Your Results! </button>
       `);
-      // <button type="submit" class="btn" id="${results.id}"> Share Quiz! </button>
     }
+
     $('.btn').on('click', function() {
       const id = $(this).attr('id');
-      navigator.clipboard.writeText(`http://localhost:8080/results/${id}`)
-      alert('Link copied to clipboard!')
-      // $(this).replaceWith(`<a href='http://localhost:8080/quizzes/${id}' <p> http://localhost:8080/quizzes/${id}  </p></a>`);
+      navigator.clipboard.writeText(`http://localhost:8080/results/${id}`);
+      alert('Link copied to clipboard!');
     });
+    
   });
 });
