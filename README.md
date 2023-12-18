@@ -9,8 +9,9 @@ This project was made with jQuery, NodeJS, Express, postgreSQL, SASS, Bootstrap,
 
 <div align="center">
   <figure style="text-align: center;">
+  <figcaption style="text-align: center;">Registration Page</figcaption>
     <img src="https://github.com/Wilson-Chu/Quiz-App/blob/wilson/newREADME/docs/quizd-register.PNG?raw=true" alt="Registration Page" width="500">
-    <figcaption style="text-align: center;">Registration Page</figcaption>
+    
   </figure>
 </div>
 <br />
