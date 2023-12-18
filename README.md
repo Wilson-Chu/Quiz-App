@@ -13,6 +13,7 @@ This project was made with jQuery, NodeJS, Express, postgreSQL, SASS, Bootstrap,
     <figcaption>Registration Page</figcaption>
   </figure>
 </div>
+<br />
 
 <div align="center">
   <figure>
@@ -20,6 +21,7 @@ This project was made with jQuery, NodeJS, Express, postgreSQL, SASS, Bootstrap,
     <figcaption>Login Page</figcaption>
   </figure>
 </div>
+<br />
 
 <div align="center">
   <figure>
@@ -27,6 +29,7 @@ This project was made with jQuery, NodeJS, Express, postgreSQL, SASS, Bootstrap,
     <figcaption>My Quizzes</figcaption>
   </figure>
 </div>
+<br />
 
 <div align="center">
   <figure>
@@ -34,6 +37,7 @@ This project was made with jQuery, NodeJS, Express, postgreSQL, SASS, Bootstrap,
     <figcaption>My Results</figcaption>
   </figure>
 </div>
+<br />
 
 <div align="center">
   <figure>
@@ -41,6 +45,7 @@ This project was made with jQuery, NodeJS, Express, postgreSQL, SASS, Bootstrap,
     <figcaption>Create New Quiz</figcaption>
   </figure>
 </div>
+<br />
 
 ## Getting Started
 
