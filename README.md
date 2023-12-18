@@ -9,39 +9,26 @@ This project was made with jQuery, NodeJS, Express, postgreSQL, SASS, Bootstrap,
 
 <div align="center">
     <img src="https://github.com/Wilson-Chu/Quiz-App/blob/wilson/newREADME/docs/quizd-register.PNG?raw=true" alt="Registration Page" width="500">
-    *Registration Page*
 </div>
 <br />
 
 <div align="center">
-  <figure style="text-align: center;">
     <img src="https://github.com/Wilson-Chu/Quiz-App/blob/wilson/newREADME/docs/quizd-login.PNG?raw=true" alt="Login Page" width="500">
-    <figcaption style="text-align: center;">Login Page</figcaption>
-  </figure>
 </div>
 <br />
 
 <div align="center">
-  <figure style="text-align: center;">
     <img src="https://github.com/Wilson-Chu/Quiz-App/blob/wilson/newREADME/docs/quizd-myquizzes.PNG?raw=true" alt="My Quizzes" width="500">
-    <figcaption style="text-align: center;">My Quizzes</figcaption>
-  </figure>
 </div>
 <br />
 
 <div align="center">
-  <figure style="text-align: center;">
     <img src="https://github.com/Wilson-Chu/Quiz-App/blob/wilson/newREADME/docs/quizd-myresults.PNG?raw=true" alt="My Results" width="500">
-    <figcaption style="text-align: center;">My Results</figcaption>
-  </figure>
 </div>
 <br />
 
 <div align="center">
-  <figure style="text-align: center;">
     <img src="https://github.com/Wilson-Chu/Quiz-App/blob/wilson/newREADME/docs/quizd-createquiz.PNG?raw=true" alt="Create New Quiz" width="500">
-    <figcaption style="text-align: center;">Create New Quiz</figcaption>
-  </figure>
 </div>
 <br />
 
