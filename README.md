@@ -1,16 +1,36 @@
-LHL Node Skeleton
-=========
+# QuizD
+QuizD is a fun quiz game where users can create their own accounts and play through publicly available and shared private quizzes. Each quiz consists of several multiple choice questions which are randomly shuffled every round. Once users complete a quiz, they will be redirected to the My Results page, where they can view their scores and share them with anyone that has the link.
 
-## Project Setup
+Every user can create their own quizzes, and keep them public or mark them as "Private" so that only people with the direct links to their quizzes can play them. During quiz creation, users are prompted to enter valid quiz titles and have at least 2 options for answers, otherwise appropriate error messages will be displayed and the users will be stopped from proceeding further.
 
-The following steps are only for _one_ of the group members to perform.
+This project was made with jQuery, NodeJS, Express, postgreSQL, SASS, Bootstrap, and Fontawesome.
 
-1. Create your own copy of this repo using the `Use This Template` button, ideally using the name of your project. The repo should be marked Public
-2. Verify that the skeleton code now shows up in your repo on GitHub, you should be automatically redirected
-3. Clone your copy of the repo to your dev machine
-4. Add your team members as collaborators to the project so that they can push to this repo
-5. Let your team members know the repo URL so that they use the same repo (they should _not_ create a copy/fork of this repo since that will add additional workflow complexity to the project)
+## Screenshots
 
+<div align="center">
+    <img src="https://github.com/Wilson-Chu/Quiz-App/blob/wilson/newREADME/docs/quizd-register.PNG?raw=true" alt="Registration Page" width="500">
+</div>
+<br />
+
+<div align="center">
+    <img src="https://github.com/Wilson-Chu/Quiz-App/blob/wilson/newREADME/docs/quizd-login.PNG?raw=true" alt="Login Page" width="500">
+</div>
+<br />
+
+<div align="center">
+    <img src="https://github.com/Wilson-Chu/Quiz-App/blob/wilson/newREADME/docs/quizd-myquizzes.PNG?raw=true" alt="My Quizzes" width="500">
+</div>
+<br />
+
+<div align="center">
+    <img src="https://github.com/Wilson-Chu/Quiz-App/blob/wilson/newREADME/docs/quizd-myresults.PNG?raw=true" alt="My Results" width="500">
+</div>
+<br />
+
+<div align="center">
+    <img src="https://github.com/Wilson-Chu/Quiz-App/blob/wilson/newREADME/docs/quizd-createquiz.PNG?raw=true" alt="Create New Quiz" width="500">
+</div>
+<br />
 
 ## Getting Started
 
@@ -42,3 +62,13 @@ The following steps are only for _one_ of the group members to perform.
 - Node 10.x or above
 - NPM 5.x or above
 - PG 6.x
+- Express 4.17.1
+- Bcryptjs 2.4.3
+- Bootstrap 5.3.2
+- SASS 1.35.1
+
+## Future Developments
+Some ideas for future app features include:
+- More default public quizzes available for all users
+- Implementing different subject categories and difficulty levels, with help from open-source quiz database APIs like Open Trivia Database (https://opentdb.com/api_config.php)
+- Currently, the shared private quiz links do not expire. We could implement time limits for each link (e.g. 24 hours, 1 week, etc.) and have each shared link expire after the determined time
