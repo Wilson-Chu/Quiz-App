@@ -9,7 +9,7 @@ This project was made with jQuery, NodeJS, Express, postgreSQL, SASS, Bootstrap,
 
 <div align="center">
     <img src="https://github.com/Wilson-Chu/Quiz-App/blob/wilson/newREADME/docs/quizd-register.PNG?raw=true" alt="Registration Page" width="500">
-    Registration Page
+    *Registration Page*
 </div>
 <br />
 
