@@ -8,41 +8,41 @@ This project was made with jQuery, NodeJS, Express, postgreSQL, SASS, Bootstrap,
 ## Screenshots
 
 <div align="center">
-  <figure>
+  <figure style="text-align: center;">
     <img src="https://github.com/Wilson-Chu/Quiz-App/blob/wilson/newREADME/docs/quizd-register.PNG?raw=true" alt="Registration Page" width="500">
-    <figcaption>Registration Page</figcaption>
+    <figcaption style="text-align: center;">Registration Page</figcaption>
   </figure>
 </div>
 <br />
 
 <div align="center">
-  <figure>
+  <figure style="text-align: center;">
     <img src="https://github.com/Wilson-Chu/Quiz-App/blob/wilson/newREADME/docs/quizd-login.PNG?raw=true" alt="Login Page" width="500">
-    <figcaption>Login Page</figcaption>
+    <figcaption style="text-align: center;">Login Page</figcaption>
   </figure>
 </div>
 <br />
 
 <div align="center">
-  <figure>
+  <figure style="text-align: center;">
     <img src="https://github.com/Wilson-Chu/Quiz-App/blob/wilson/newREADME/docs/quizd-myquizzes.PNG?raw=true" alt="My Quizzes" width="500">
-    <figcaption>My Quizzes</figcaption>
+    <figcaption style="text-align: center;">My Quizzes</figcaption>
   </figure>
 </div>
 <br />
 
 <div align="center">
-  <figure>
+  <figure style="text-align: center;">
     <img src="https://github.com/Wilson-Chu/Quiz-App/blob/wilson/newREADME/docs/quizd-myresults.PNG?raw=true" alt="My Results" width="500">
-    <figcaption>My Results</figcaption>
+    <figcaption style="text-align: center;">My Results</figcaption>
   </figure>
 </div>
 <br />
 
 <div align="center">
-  <figure>
+  <figure style="text-align: center;">
     <img src="https://github.com/Wilson-Chu/Quiz-App/blob/wilson/newREADME/docs/quizd-createquiz.PNG?raw=true" alt="Create New Quiz" width="500">
-    <figcaption>Create New Quiz</figcaption>
+    <figcaption style="text-align: center;">Create New Quiz</figcaption>
   </figure>
 </div>
 <br />
